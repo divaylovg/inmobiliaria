@@ -15,11 +15,11 @@ require __DIR__ . "/partials/inmobiliaria.part.php";
     </div>
     <div class="col-lg-3 col-md-6 mb-4">
         <label for="validationTooltip01">Precio alquiler</label>
-        <input type="text" class="form-control" name="alquiler" placeholder="Entero" required>
+        <input type="text" name="alquiler" placeholder="Entero" required>
     </div>
         <div class="col-lg-3 col-md-6 mb-4">
             <label for="validationTooltip01">Precio venta</label>
-            <input type="text" class="form-control" name="venta" placeholder="Entero" required>
+            <input type="text"  name="venta" placeholder="Entero" required>
         </div>
     <div class="col-lg-3 col-md-6 mb-4">
         <label for="validationTooltip01">Calle</label>
@@ -60,6 +60,7 @@ require __DIR__ . "/partials/inmobiliaria.part.php";
                 <option value="trastero">Trastero</option>
             </select>
         </div>
+
         <div class="col-md-4 mb-3">
             <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Ascensor</label>
             <select class="custom-select my-1 mr-sm-2" name="ascensor" id="habitaciones">
@@ -166,10 +167,48 @@ require __DIR__ . "/partials/inmobiliaria.part.php";
                 <option value='zaragoza'>Zaragoza</option>
             </select>
         </div>
+        <div class="col-md-4 mb-3">
+            <label for="validationTooltip01">Codigo postal</label>
+            <input type="text" class="form-control" name="cp" placeholder="CP"  required>
+        </div>
 
+
+        <div class="col-md-4 mb-3">
+
+            <label for="num">Foto 1 </label>
+            <input type="file" name="foto1" value="">
+        </div>
+        <div class="col-md-4 mb-3">
+
+            <label for="num">Foto 2 </label>
+            <input type="file" name="foto2" value="">
+        </div>
+        <div class="col-md-4 mb-3">
+
+            <label for="num">Foto 3 </label>
+            <input type="file" name="foto3" value="">
+        </div>
+        <div class="col-md-4 mb-3">
+
+            <label for="num">Foto 4 </label>
+            <input type="file" name="foto4" value="">
+        </div>
+        <div class="col-md-4 mb-3">
+
+            <label for="num">Foto 5 </label>
+            <input type="file" name="foto5" value="">
+        </div>
+
+
+        <div class="form-group col-12">
+            <label for="coment">Descripcion del inmueble</label>
+            <textarea class="form-control" id="descripcion" name="coment"  placeholder="Describenos de la mejor manera las caracteristicas del inmueble. Recuerda que de eso depende su venta/alquiler." rows="3"></textarea>
+        </div>
 
     </div>
-    <input type="submit" value="Enviar"></input>
+    <div>    <input type="submit" value="Enviar"></input>
+    </div>
+</br>
 </form>
 
 
