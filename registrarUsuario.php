@@ -35,7 +35,6 @@ if ($_SERVER['REQUEST_METHOD']==='POST') {
 
                             $statement->execute();
                             echo "El usuario ".$usuario." ha sido creado correctamente.";
-                            echo "El usuario ".$statement['id']." ha sido creado correctamente.";
                         }else{
                             echo "Falta contraseña";
                         }
