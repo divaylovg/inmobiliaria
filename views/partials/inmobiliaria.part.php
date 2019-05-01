@@ -42,7 +42,7 @@
                     <a class="nav-link" href="registrarUsuario.php">Registro usuarios</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="login.php">Login</a>
+                    <a class="nav-link" href="loguearUsuario.php">Login</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="contacto.html">Contacto</a>

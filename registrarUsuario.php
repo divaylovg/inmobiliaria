@@ -34,8 +34,8 @@ if ($_SERVER['REQUEST_METHOD']==='POST') {
                             $statement->bindParam(':contra', $contra);
 
                             $statement->execute();
-                            echo "El usuario ".$nombre." ha sido creado correctamente.";
-
+                            echo "El usuario ".$usuario." ha sido creado correctamente.";
+                            echo "El usuario ".$statement['id']." ha sido creado correctamente.";
                         }else{
                             echo "Falta contraseña";
                         }
