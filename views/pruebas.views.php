@@ -27,6 +27,45 @@ if ($_SERVER['REQUEST_METHOD']==='GET') {
 
 
 
+<div class="container">
+
+    <!--  Header -->
+    <header class="jumbotron my-4">
+        <h1 class="display-3">Queremos encontrar tu hogar</h1>
+        <p>Les ofrecemos asesoramiento totalmente gratuito. Tasacion de su propiedad. Compra venta y alquiler de toda clase de inmuebles.</p>
+        <p>A continuacion nuestra mejor seleccion de inmuebles</p>
+        <a href="#" class="btn btn-primary btn-lg">Quiero saber mas!</a>
+    </header>
+
+    <div class="row text-center">
+
+
+            <div class="col-lg-3 col-md-6 mb-4">
+                <div class="card h-100">
+                    <img class="card-img-top" src=<?php echo $objetos[1]['foto1'];?>>
+                    <div class="card-body">
+                        <h4 class="card-title">Ciudad <?php echo $objetos[1]['ciudad'];?> </h4>
+                        <p class="card-text">
+                            Informacion sobre inmueble:
+                        </p>
+                        <p class="card-text">
+                            Tipo de inmueble <?php echo $objetos[1]['tipo'];?>
+                        </p>
+                        <p class="card-text">
+                            Metros cuadrados <?php echo $objetos[1]['metros'];?>
+                        </p>
+
+                    </div>
+                    <div class="card-footer">
+                        <a href="#" class="btn btn-primary">Mas informacion</a>
+                    </div>
+                </div>
+            </div>
+
+
+    </div>
+
+</div>
 
 
 <!-- Footer -->
