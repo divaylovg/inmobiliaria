@@ -13,8 +13,6 @@ if ($_SERVER['REQUEST_METHOD']==='POST') {
 
     $sql="INSERT INTO inmueble (tipo , alquiler, venta, habitaciones, metros,provincia, ciudad, calle, cp, numero, puerta, piso, idPropietario,telefonoPropietario,descripcion,ascensor,foto1,foto2,foto3,foto4,foto5) VALUES (:tipo , :alquiler, :venta, :habitaciones, :metros, :provincia, :ciudad, :calle, :cp, :numero, :puerta, :piso, :idPropietario, :telefonoPropietario, :descripcion, :ascensor, :foto1,:foto2, :foto3, :foto4,:foto5)";
     $tipo=$_POST['tipo'];
-    $alquiler=$_POST['alquiler'];
-    $venta=$_POST['venta'];
     $habitaciones=$_POST['habitaciones'];
     $metros=$_POST['metros'];
     $provincia=$_POST['provincia'];
@@ -27,11 +25,14 @@ if ($_SERVER['REQUEST_METHOD']==='POST') {
     $telefonoPropietario=$_POST['telefonoPropietario'];
     $descripcion=$_POST['descripcion'];
     $ascensor=$_POST['ascensor'];
-    $foto1=$_POST['foto1'];
-    $foto2=$_POST['foto2'];
-    $foto3=$_POST['foto3'];
-    $foto4=$_POST['foto4'];
-    $foto5=$_POST['foto5'];
+
+
+    if(!isset($alquiler)){
+        $alquiler=$_POST['alquiler'];
+    }
+    if(!isset($venta)){
+        $venta=$_POST['venta'];
+    }
     //EL ID ESTA RESERVADO DE ANTES GUARDADO EN SESION COMO EL NOMBRE DEL USUARIO.
 
 
@@ -87,10 +88,11 @@ if ($_SERVER['REQUEST_METHOD']==='POST') {
 
                                                                                 $statement->bindParam(':idPropietario', $idPropietario);
 
-                                                                                if ($venta != "") {
+                                                                                if (isset($venta)) {
                                                                                     $statement->bindParam(':venta', $venta);
+
                                                                                 }
-                                                                                if ($alquiler != "") {
+                                                                                if (isset($alquiler)) {
                                                                                     $statement->bindParam(':alquiler', $alquiler);
                                                                                 }
 

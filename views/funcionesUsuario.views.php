@@ -12,12 +12,12 @@ require __DIR__ . "/partials/inmobiliaria.part.php";
 
         <div class="col-lg-3 col-md-6 mb-4">
             <label for="validationTooltip01">Precio alquiler</label>
-            <input type="text" name="alquiler" placeholder="Entero" required>
+            <input type="text" name="alquiler" placeholder="Entero" >
         </div>
 
         <div class="col-lg-3 col-md-6 mb-4">
             <label for="validationTooltip01">Precio venta</label>
-            <input type="text"  name="venta" placeholder="Entero" required>
+            <input type="text"  name="venta" placeholder="Entero" >
         </div>
 
 
