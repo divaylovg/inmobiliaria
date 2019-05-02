@@ -102,8 +102,13 @@ if ($_SERVER['REQUEST_METHOD']==='POST') {
                                                                                     $name2 = $idUnico . '_f2_' . $name2;
                                                                                     $foto2 = $ruta . $name2;
 
-                                                                                }if (move_uploaded_file($_FILES['foto2']['tmp_name'], $foto2)) {
+                                                                                    if (move_uploaded_file($_FILES['foto2']['tmp_name'], $foto2)) {
+                                                                                        $statement->bindParam(':foto2', $foto2);
+                                                                                    }
+                                                                                }else{
+                                                                                    $foto2=null;
                                                                                     $statement->bindParam(':foto2', $foto2);
+
                                                                                 }
 
 
@@ -111,29 +116,42 @@ if ($_SERVER['REQUEST_METHOD']==='POST') {
                                                                                 If (is_file($foto3) === true) {
                                                                                     $name3 = $idUnico . '_f3_' . $name3;
                                                                                     $foto3 = $ruta . $name3;
-
-                                                                                }if (move_uploaded_file($_FILES['foto3']['tmp_name'], $foto3)) {
+                                                                                    if (move_uploaded_file($_FILES['foto3']['tmp_name'], $foto3)) {
+                                                                                        $statement->bindParam(':foto3', $foto3);
+                                                                                    }
+                                                                                }else{
+                                                                                    $foto3=null;
                                                                                     $statement->bindParam(':foto3', $foto3);
+
                                                                                 }
 
 
                                                                                 If (is_file($foto4) === true) {
                                                                                     $name4 = $idUnico . '_f4_' . $name4;
                                                                                     $foto4 = $ruta . $name4;
-
-                                                                                }if (move_uploaded_file($_FILES['foto4']['tmp_name'], $foto4)) {
+                                                                                    if (move_uploaded_file($_FILES['foto4']['tmp_name'], $foto4)) {
+                                                                                        $statement->bindParam(':foto4', $foto4);
+                                                                                    }
+                                                                                }else{
+                                                                                    $foto4=null;
                                                                                     $statement->bindParam(':foto4', $foto4);
+
                                                                                 }
 
                                                                                 If (is_file($foto5) === true) {
                                                                                     $name5 = $idUnico . '_f5_' . $name5;
                                                                                     $foto5 = $ruta . $name5;
-
-                                                                                }if (move_uploaded_file($_FILES['foto5']['tmp_name'], $foto5)) {
+                                                                                    if (move_uploaded_file($_FILES['foto5']['tmp_name'], $foto5)) {
+                                                                                        $statement->bindParam(':foto5', $foto5);
+                                                                                    }
+                                                                                }else{
+                                                                                    $foto5=null;
                                                                                     $statement->bindParam(':foto5', $foto5);
+
                                                                                 }
 
 
+                                                                                echo $statement->queryString;
                                                                                 $statement->execute();
                                                                             }else{
                                                                                 ?>
