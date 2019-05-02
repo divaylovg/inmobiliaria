@@ -9,18 +9,23 @@ require __DIR__ . "/partials/inmobiliaria.part.php";
     <h1>Aqui puedes insertar los inmuebles que desees para que se puedan ver en nuestra web</h1>
     <div class="form-row">
 
-    <div class="col-lg-3 col-md-6 mb-4">
-        <label for="validationTooltip01">Metros cuadrados</label>
-        <input type="text" class="form-control" name="metros" placeholder="Metros"  required>
-    </div>
-    <div class="col-lg-3 col-md-6 mb-4">
-        <label for="validationTooltip01">Precio alquiler</label>
-        <input type="text" name="alquiler" placeholder="Entero" required>
-    </div>
+
+        <div class="col-lg-3 col-md-6 mb-4">
+            <label for="validationTooltip01">Precio alquiler</label>
+            <input type="text" name="alquiler" placeholder="Entero" required>
+        </div>
+
         <div class="col-lg-3 col-md-6 mb-4">
             <label for="validationTooltip01">Precio venta</label>
             <input type="text"  name="venta" placeholder="Entero" required>
         </div>
+
+
+        <div class="col-lg-3 col-md-6 mb-4">
+        <label for="validationTooltip01">Metros cuadrados</label>
+        <input type="text" class="form-control" name="metros" placeholder="Metros"  required>
+    </div>
+
     <div class="col-lg-3 col-md-6 mb-4">
         <label for="validationTooltip01">Calle</label>
         <input type="text" class="form-control" name="calle" placeholder="Nombre de la calle" required>
@@ -44,7 +49,7 @@ require __DIR__ . "/partials/inmobiliaria.part.php";
 
     <div class="col-lg-3 col-md-6 mb-4">
         <label for="validationTooltip01">Telefono</label>
-        <input type="text" class="form-control" name="telefono" placeholder="Entero"  required>
+        <input type="text" class="form-control" name="telefonoPropietario" placeholder="Entero"  required>
     </div>
 
 
@@ -202,7 +207,7 @@ require __DIR__ . "/partials/inmobiliaria.part.php";
 
         <div class="form-group col-12">
             <label for="coment">Descripcion del inmueble</label>
-            <textarea class="form-control" id="descripcion" name="coment"  placeholder="Describenos de la mejor manera las caracteristicas del inmueble. Recuerda que de eso depende su venta/alquiler." rows="3"></textarea>
+            <textarea class="form-control" id="descripcion" name="descripcion"  placeholder="Describenos de la mejor manera las caracteristicas del inmueble. Recuerda que de eso depende su venta/alquiler." rows="3"></textarea>
         </div>
 
     </div>

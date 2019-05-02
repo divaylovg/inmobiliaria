@@ -1,5 +1,6 @@
 <?php
 
+session_start();
 
 require "views/loguearUsuario.views.php";
 
@@ -26,18 +27,19 @@ if ($_SERVER['REQUEST_METHOD']==='POST') {
         <?
 
     }else if (password_verify($contra, $persona["contra"])){
-        $_SESSION["usuario"]=$usuario;
-        $_SESSION["id"]=$persona['id'];
-        ?>  <script>
-            alert(<?php $persona['id']?>);
-            alert(<?php $usuario?>);
+        echo $usuario;
+        echo $persona['id'];
 
-        </script>
-        <?
+        $_SESSION["id"]=$persona['id'];
+
+        include $_SESSION["id"];
+
+        $a=$_SESSION["id"];
+        echo $a;
 
         //las contraseñas coinciden y redirigimos a funciones de usuario
         header('Location:funcionesUsuario.php');
-    }else if(!password_verify($contra, $usuario['contra'])){
+    }else if(!password_verify($contra, $persona['contra'])){
         ?>  <script>
                 alert("La contraseña no coincide, vuelva a intentarlo");
             </script>
