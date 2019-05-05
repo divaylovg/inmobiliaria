@@ -151,7 +151,7 @@ if ($_SERVER['REQUEST_METHOD']==='POST') {
                                                                                 }
 
 
-                                                                                echo $statement->queryString;
+                                                                                // ver la insercion echo $statement->queryString;
                                                                                 $statement->execute();
                                                                             }else{
                                                                                 ?>

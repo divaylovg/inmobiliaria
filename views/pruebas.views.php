@@ -39,33 +39,40 @@ if ($_SERVER['REQUEST_METHOD']==='GET') {
 
     <div class="row text-center">
 
+        <?php foreach($objetos as $objeto): ?>
+        <div class="col-lg-3 col-md-6 mb-4">
 
-            <div class="col-lg-3 col-md-6 mb-4">
-                <div class="card h-100">
-                    <img class="card-img-top" src=<?php echo $objetos[1]['foto1'];?>>
-                    <div class="card-body">
-                        <h4 class="card-title">Ciudad <?php echo $objetos[1]['ciudad'];?> </h4>
-                        <p class="card-text">
-                            Informacion sobre inmueble:
-                        </p>
-                        <p class="card-text">
-                            Tipo de inmueble <?php echo $objetos[1]['tipo'];?>
-                        </p>
-                        <p class="card-text">
-                            Metros cuadrados <?php echo $objetos[1]['metros'];?>
-                        </p>
+        <div class="card h-100">
+                <img class="card-img-top" src=<?php echo $objeto['foto1'];?>>
+                <div class="card-body">
+                    <h4 class="card-title">Ciudad <?php echo $objeto['ciudad'];?> </h4>
+                    <p class="card-text">
+                        Informacion sobre inmueble:
+                    </p>
+                    <p class="text-left card-text">
+                        Tipo de inmueble: <?php echo $objeto['tipo'];?></br>
+                        Habitaciones: <?php echo $objeto['habitaciones'];?></br>
+                        Metros cuadrados: <?php echo $objeto['metros'];?></br>
+                        Precio de venta: <?php echo $objeto['venta'];?></br>
+                        Precio de alquiler: <?php echo $objeto['alquiler'];?>/mes.</br>
+                        Identificador del inmueble: <?php echo $objeto['id'];?></br>
 
-                    </div>
-                    <div class="card-footer">
-                        <a href="#" class="btn btn-primary">Mas informacion</a>
-                    </div>
+                    </p>
+
                 </div>
-            </div>
+                <div class="card-footer">
+                    <a href="#" class="btn btn-primary">Mas informacion</a>
+                </div>
+        </div>
+        </div>
+
+        <?php endforeach; ?>
 
 
     </div>
 
 </div>
+
 
 
 <!-- Footer -->

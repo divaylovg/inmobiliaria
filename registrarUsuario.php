@@ -34,7 +34,12 @@ if ($_SERVER['REQUEST_METHOD']==='POST') {
                             $statement->bindParam(':contra', $contra);
 
                             $statement->execute();
-                            echo "El usuario ".$usuario." ha sido creado correctamente.";
+                            ?>  <script>
+                                alert("El usuario se ha registrado correctamente");
+                            </script>
+                            <?
+                            header('Location: loguearUsuario.php');
+
                         }else{
                             echo "Falta contraseña";
                         }

@@ -14,7 +14,7 @@ class Connection
                 PDO::ATTR_ERRMODE=>PDO::ERRMODE_EXCEPTION,
                 PDO::ATTR_PERSISTENT=>true];
             $conection=new PDO(
-                'mysql:localhost=127.0.0.1;dbname=inmobiliaria;charset=utf8',
+                'mysql:localhost=127.0.0.1;dbname=inmobiliaria2;charset=utf8',
                 'root',
                 "",
                 $opciones);
