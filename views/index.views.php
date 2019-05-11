@@ -58,7 +58,7 @@ if ($_SERVER['REQUEST_METHOD']==='GET') {
                             Precio de alquiler: <?php echo $objeto['alquiler'];?>/mes.</br>
                             Identificador del inmueble:
                         </p>
-                        <form>
+                        <form action="index.php" method="POST" enctype="multipart/form-data">
                             <input type="text" readonly="readonly" value=<?php echo $objeto['id'];?> />
                             <input type="submit" value="Mas informacion"></input>
 
