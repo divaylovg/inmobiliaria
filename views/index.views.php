@@ -2,7 +2,29 @@
 require __DIR__."/partials/inmobiliaria.part.php";
 require_once 'Connection.php';
 $PDO=Connection::make();
+
+$objetos=[];
+
+if ($_SERVER['REQUEST_METHOD']==='GET') {
+
+    $stmt=$PDO->prepare("SELECT * FROM inmueble");
+    $stmt->setFetchMode(PDO::FETCH_CLASS|PDO::FETCH_PROPS_LATE,"inmueble");
+    $stmt->execute();
+    $objetos=$stmt->fetchAll();
+
+    //obtenemos el total de objetos que tenemos en nuestra base de datos en la tabla inmueble. Vamos a imprimir los primeros 6 solo.
+    /*  echo $todos=sizeof($objetos);
+      for ($i=0;$i<8;$i++){
+          echo $objetos[$i]['id'];
+          echo $objetos[$i]['tipo'];
+          echo $objetos[$i]['alquiler'];
+          ?></br><?php
+      }*/
+}
+
+
 ?>
+
 
 
 <div class="container">
@@ -17,141 +39,44 @@ $PDO=Connection::make();
 
     <div class="row text-center">
 
-        <div class="col-lg-3 col-md-6 mb-4">
-            <div class="card h-100">
-                <img class="card-img-top" src="img/1.jpg">
-                <div class="card-body">
-                    <h4 class="card-title">Localidad </h4>
-                    <p class="card-text">
-                        Informacion sobre inmueble:
-                    </p>
-                </div>
-                <div class="card-footer">
-                    <a href="#" class="btn btn-primary">Mas informacion</a>
-                </div>
-            </div>
-        </div>
+        <?php foreach($objetos as $objeto): ?>
+            <div class="col-lg-3 col-md-6 mb-4">
 
+                <div class="card h-100">
+                    <img class="card-img-top" src=<?php echo $objeto['foto1'];?>>
+                    <div class="card-body">
+                        <h4 class="card-title">Ciudad <?php echo $objeto['ciudad'];?> </h4>
+                        <p class="card-text">
+                            Informacion sobre inmueble:
+                        </p>
+                        <p class="text-left card-text">
+                            Tipo de inmueble: <?php echo $objeto['tipo'];?></br>
+                            Habitaciones: <?php echo $objeto['habitaciones'];?></br>
+                            Metros cuadrados: <?php echo $objeto['metros'];?></br>
+                            Precio de venta: <?php echo $objeto['venta'];?></br>
+                            Precio de alquiler: <?php echo $objeto['alquiler'];?>/mes.</br>
+                            Identificador del inmueble:
+                            <input type="text" readonly="readonly" value=<?php echo $objeto['id'];?> />
+                            <input type="submit" value="Mas informacion"></input>
 
-        <div class="col-lg-3 col-md-6 mb-4">
-            <div class="card h-100">
-                <img class="card-img-top" src="img/2.jpg">
-                <div class="card-body">
-                    <h4 class="card-title">Localidad </h4>
-                    <p class="card-text">
-                        Informacion sobre inmueble:
-                    </p>
-                </div>
-                <div class="card-footer">
-                    <a href="#" class="btn btn-primary">Mas informacion</a>
-                </div>
-            </div>
-        </div>
+                        </p>
 
-
-        <div class="col-lg-3 col-md-6 mb-4">
-            <div class="card h-100">
-                <img class="card-img-top" src="img/3.jpg">
-                <div class="card-body">
-                    <h4 class="card-title">Localidad </h4>
-                    <p class="card-text">
-                        Informacion sobre inmueble:
-                    </p>
-                </div>
-                <div class="card-footer">
-                    <a href="#" class="btn btn-primary">Mas informacion</a>
+                    </div>
+                    <div class="card-footer">
+                        <!--class="btn btn-primary submit"-->
+                        <input class="btn btn-primary" type="submit" value="Mas informacion"></input>
+                    </div>
                 </div>
             </div>
-        </div>
 
-
-        <div class="col-lg-3 col-md-6 mb-4">
-            <div class="card h-100">
-                <img class="card-img-top" src="img/4.jpg">
-                <div class="card-body">
-                    <h4 class="card-title">Localidad </h4>
-                    <p class="card-text">
-                        Informacion sobre inmueble:
-                    </p>
-                </div>
-                <div class="card-footer">
-                    <a href="#" class="btn btn-primary">Mas informacion</a>
-                </div>
-            </div>
-        </div>
-
-
-        <div class="col-lg-3 col-md-6 mb-4">
-            <div class="card h-100">
-                <img class="card-img-top" src="img/5.jpg">
-                <div class="card-body">
-                    <h4 class="card-title">Localidad </h4>
-                    <p class="card-text">
-                        Informacion sobre inmueble:
-                    </p>
-                </div>
-                <div class="card-footer">
-                    <a href="#" class="btn btn-primary">Mas informacion</a>
-                </div>
-            </div>
-        </div>
-
-
-        <div class="col-lg-3 col-md-6 mb-4">
-            <div class="card h-100">
-                <img class="card-img-top" src="img/6.jpg">
-                <div class="card-body">
-                    <h4 class="card-title">Localidad </h4>
-                    <p class="card-text">
-                        Informacion sobre inmueble:
-                    </p>
-                </div>
-                <div class="card-footer">
-                    <a href="#" class="btn btn-primary">Mas informacion</a>
-                </div>
-            </div>
-        </div>
-
-
-        <div class="col-lg-3 col-md-6 mb-4">
-            <div class="card h-100">
-                <img class="card-img-top" src="img/1.jpg">
-                <div class="card-body">
-                    <h4 class="card-title">Localidad </h4>
-                    <p class="card-text">
-                        Informacion sobre inmueble:
-                    </p>
-                </div>
-                <div class="card-footer">
-                    <a href="#" class="btn btn-primary">Mas informacion</a>
-                </div>
-            </div>
-        </div>
-
-
-        <div class="col-lg-3 col-md-6 mb-4">
-            <div class="card h-100">
-                <img class="card-img-top" src="img/1.jpg">
-                <div class="card-body">
-                    <h4 class="card-title">Localidad </h4>
-                    <p class="card-text">
-                        Informacion sobre inmueble:
-                    </p>
-                </div>
-                <div class="card-footer">
-                    <a href="#" class="btn btn-primary">Mas informacion</a>
-                </div>
-            </div>
-        </div>
-
-
-
-
+        <?php endforeach; ?>
 
 
     </div>
 
 </div>
+
+
 
 <!-- Footer -->
 <footer class="py-1 bg-dark ">

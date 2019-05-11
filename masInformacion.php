@@ -2,18 +2,12 @@
 
 session_start();
 
-require "views/pruebas.views.php";
+require "views/masInformacion.views.php";
 
 require_once 'Connection.php';
 $PDO=Connection::make();
 
 if ($_SERVER['REQUEST_METHOD']==='POST') {
-    echo "asdfasdfasdfadsf";
-    ?><script>
-        alert("No se ha encontrado inmueble con el id indicado.");
-    </script>
-    <?
-
 
     $sql = "SELECT * from inmueble where id=:id";
 
@@ -25,6 +19,7 @@ if ($_SERVER['REQUEST_METHOD']==='POST') {
     $inmueble = $statement->fetch(PDO::FETCH_ASSOC);
 
     if (!$inmueble){
+        //no hay usuario que se llame asi
         ?><script>
             alert("No se ha encontrado inmueble con el id indicado.");
         </script>

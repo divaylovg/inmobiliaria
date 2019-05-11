@@ -13,13 +13,13 @@ if ($_SERVER['REQUEST_METHOD']==='GET') {
     $objetos=$stmt->fetchAll();
 
     //obtenemos el total de objetos que tenemos en nuestra base de datos en la tabla inmueble. Vamos a imprimir los primeros 6 solo.
-    echo $todos=sizeof($objetos);
+  /*  echo $todos=sizeof($objetos);
     for ($i=0;$i<8;$i++){
         echo $objetos[$i]['id'];
         echo $objetos[$i]['tipo'];
         echo $objetos[$i]['alquiler'];
         ?></br><?php
-    }
+    }*/
 }
 
 
@@ -55,13 +55,16 @@ if ($_SERVER['REQUEST_METHOD']==='GET') {
                         Metros cuadrados: <?php echo $objeto['metros'];?></br>
                         Precio de venta: <?php echo $objeto['venta'];?></br>
                         Precio de alquiler: <?php echo $objeto['alquiler'];?>/mes.</br>
-                        Identificador del inmueble: <?php echo $objeto['id'];?></br>
+                        Identificador del inmueble:
+                        <input type="text" readonly="readonly" value=<?php echo $objeto['id'];?> />
+                        <input type="submit" value="Mas informacion"></input>
 
                     </p>
 
                 </div>
                 <div class="card-footer">
-                    <a href="#" class="btn btn-primary">Mas informacion</a>
+                    <!--class="btn btn-primary submit"-->
+                    <input class="btn btn-primary" type="submit" value="Mas informacion"></input>
                 </div>
         </div>
         </div>
