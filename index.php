@@ -27,7 +27,7 @@ if ($_SERVER['REQUEST_METHOD']==='POST') {
 if ($_SERVER['REQUEST_METHOD']==='POST') {
 
     $sql = "SELECT * from inmueble where id=:id";
-
+    // me pasa el id vacio y no se porque
     $id=$_POST['id'];
 
 
