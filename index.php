@@ -49,11 +49,15 @@ if ($_SERVER['REQUEST_METHOD']==='POST') {
             <?php
 
         }else{
-            echo $inmueble['id'];
-            echo $inmueble['habitaciones'];
-            echo $inmueble['metros'];
-            echo $inmueble['id'];
-            echo $inmueble['id'];
+            echo $inmueble['id'];?>
+</br>
+<?php echo $inmueble['id'];?>
+</br>
+<?php echo $inmueble['imagen1'];?></br>
+<?php echo $inmueble['provincia'];?></br>
+<?php echo $inmueble['metros'];?><?php
+
+
         }
 }
 

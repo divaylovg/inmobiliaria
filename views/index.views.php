@@ -23,6 +23,8 @@ if ($_SERVER['REQUEST_METHOD']==='GET') {
 }
 
 
+
+
 ?>
 
 
@@ -59,7 +61,7 @@ if ($_SERVER['REQUEST_METHOD']==='GET') {
                             Identificador del inmueble:
                         </p>
                         <form action="index.php" method="POST" enctype="multipart/form-data">
-                            <input type="text" readonly value=<?php echo $objeto['id'];?> />
+                            <input type="text" readonly name="id" value=<?php echo $objeto['id'];?> />
                             <input type="submit" value="Mas informacion"></input>
 
                     </div>
