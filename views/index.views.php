@@ -49,6 +49,7 @@ if ($_SERVER['REQUEST_METHOD']==='GET') {
                         <p class="card-text">
                             Informacion sobre inmueble:
                         </p>
+
                         <p class="text-left card-text">
                             Tipo de inmueble: <?php echo $objeto['tipo'];?></br>
                             Habitaciones: <?php echo $objeto['habitaciones'];?></br>
@@ -56,16 +57,18 @@ if ($_SERVER['REQUEST_METHOD']==='GET') {
                             Precio de venta: <?php echo $objeto['venta'];?></br>
                             Precio de alquiler: <?php echo $objeto['alquiler'];?>/mes.</br>
                             Identificador del inmueble:
+                        </p>
+                        <form>
                             <input type="text" readonly="readonly" value=<?php echo $objeto['id'];?> />
                             <input type="submit" value="Mas informacion"></input>
-
-                        </p>
 
                     </div>
                     <div class="card-footer">
                         <!--class="btn btn-primary submit"-->
                         <input class="btn btn-primary" type="submit" value="Mas informacion"></input>
                     </div>
+                         </form>
+
                 </div>
             </div>
 

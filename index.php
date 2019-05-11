@@ -8,6 +8,10 @@ require_once 'Connection.php';
 $PDO=Connection::make();
 
 if ($_SERVER['REQUEST_METHOD']==='POST') {
+    ?>  <script>
+        alert("La contraseña no coincide, vuelva a intentarlo");
+    </script>
+    <?
     // no me imprime la id por lo tanto no entra aqui ni guarda el id del piso en session ni me redirige a la pagina de mas informacion. Ahi es donde imprimire el piso en detalle.
     echo $_POST['id'];
 
