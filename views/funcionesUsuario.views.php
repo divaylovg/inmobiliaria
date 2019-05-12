@@ -179,27 +179,26 @@ require __DIR__ . "/partials/inmobiliaria.part.php";
 
 
         <div class="col-md-4 mb-3">
-
             <label for="num">Foto 1 </label>
             <input type="file" name="foto1" value="">
         </div>
-        <div class="col-md-4 mb-3">
 
+        <div class="col-md-4 mb-3">
             <label for="num">Foto 2 </label>
             <input type="file" name="foto2" value="">
         </div>
-        <div class="col-md-4 mb-3">
 
+        <div class="col-md-4 mb-3">
             <label for="num">Foto 3 </label>
             <input type="file" name="foto3" value="">
         </div>
-        <div class="col-md-4 mb-3">
 
+        <div class="col-md-4 mb-3">
             <label for="num">Foto 4 </label>
             <input type="file" name="foto4" value="">
         </div>
-        <div class="col-md-4 mb-3">
 
+        <div class="col-md-4 mb-3">
             <label for="num">Foto 5 </label>
             <input type="file" name="foto5" value="">
         </div>

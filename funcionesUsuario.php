@@ -51,7 +51,6 @@ if ($_SERVER['REQUEST_METHOD']==='POST') {
                                                                 if ($ascensor!=""){
                                                                         if ($telefonoPropietario!=""){
 
-                                                                            $ruta="imagenes/";
                                                                             $name1=$_FILES['foto1']['name'];
                                                                             $name2=$_FILES['foto2']['name'];
                                                                             $name3=$_FILES['foto3']['name'];
@@ -64,10 +63,8 @@ if ($_SERVER['REQUEST_METHOD']==='POST') {
                                                                             $foto5="imagenes/".$name5;
                                                                             $idUnico = time();
 
-                                                                            If (is_file($foto1) === true) {
+                                                                            if (is_file($foto1) === true) {
                                                                                 $name1 = $idUnico . '_f1_' . $name1;
-                                                                                $foto1 = $ruta . $name1;
-
                                                                             }if (move_uploaded_file($_FILES['foto1']['tmp_name'], $foto1)) {
 
                                                                                 $statement = $PDO->prepare($sql);
@@ -98,10 +95,8 @@ if ($_SERVER['REQUEST_METHOD']==='POST') {
 
 
 
-                                                                                If (is_file($foto2) === true) {
+                                                                                if (is_file($foto2) === true) {
                                                                                     $name2 = $idUnico . '_f2_' . $name2;
-                                                                                    $foto2 = $ruta . $name2;
-
                                                                                     if (move_uploaded_file($_FILES['foto2']['tmp_name'], $foto2)) {
                                                                                         $statement->bindParam(':foto2', $foto2);
                                                                                     }
@@ -111,11 +106,8 @@ if ($_SERVER['REQUEST_METHOD']==='POST') {
 
                                                                                 }
 
-
-
-                                                                                If (is_file($foto3) === true) {
+                                                                                if (is_file($foto3) === true) {
                                                                                     $name3 = $idUnico . '_f3_' . $name3;
-                                                                                    $foto3 = $ruta . $name3;
                                                                                     if (move_uploaded_file($_FILES['foto3']['tmp_name'], $foto3)) {
                                                                                         $statement->bindParam(':foto3', $foto3);
                                                                                     }
@@ -125,10 +117,8 @@ if ($_SERVER['REQUEST_METHOD']==='POST') {
 
                                                                                 }
 
-
-                                                                                If (is_file($foto4) === true) {
+                                                                                if (is_file($foto4) === true) {
                                                                                     $name4 = $idUnico . '_f4_' . $name4;
-                                                                                    $foto4 = $ruta . $name4;
                                                                                     if (move_uploaded_file($_FILES['foto4']['tmp_name'], $foto4)) {
                                                                                         $statement->bindParam(':foto4', $foto4);
                                                                                     }
@@ -138,9 +128,8 @@ if ($_SERVER['REQUEST_METHOD']==='POST') {
 
                                                                                 }
 
-                                                                                If (is_file($foto5) === true) {
+                                                                                if (is_file($foto5) === true) {
                                                                                     $name5 = $idUnico . '_f5_' . $name5;
-                                                                                    $foto5 = $ruta . $name5;
                                                                                     if (move_uploaded_file($_FILES['foto5']['tmp_name'], $foto5)) {
                                                                                         $statement->bindParam(':foto5', $foto5);
                                                                                     }
@@ -153,6 +142,11 @@ if ($_SERVER['REQUEST_METHOD']==='POST') {
 
                                                                                 // ver la insercion echo $statement->queryString;
                                                                                 $statement->execute();
+                                                                                ?>
+                                                                                    <script>
+                                                                                        alert("El piso se ha registrado");
+                                                                                    </script>
+                                                                               <?
                                                                             }else{
                                                                                 ?>
                                                                                 <script>
