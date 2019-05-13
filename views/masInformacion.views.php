@@ -131,7 +131,11 @@ if ($_SERVER['REQUEST_METHOD']==='POST') {
         <th scope="row">Altura:</th>
         <td><?php echo $inmueble['piso'];?></td>
         <th>Ascensor:</th>
-        <td><?php echo $inmueble['ascensor'];?></td>
+        <td><?php if('nu'!=$inmueble['ascensor']){
+                echo $inmueble['ascensor'];
+            }else{
+            echo "No";
+            }?></td>
     </tr>
     <tr>
         <th scope="row">Comentario:</th>

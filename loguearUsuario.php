@@ -35,7 +35,6 @@ if ($_SERVER['REQUEST_METHOD']==='POST') {
         include $_SESSION["id"];
 
         $a=$_SESSION["id"];
-        echo $a;
 
         //las contraseñas coinciden y redirigimos a funciones de usuario
         header('Location:funcionesUsuario.php');

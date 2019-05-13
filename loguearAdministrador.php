@@ -34,8 +34,6 @@ if ($_SERVER['REQUEST_METHOD']==='POST') {
 
         include $_SESSION["id"];
 
-        $a=$_SESSION["id"];
-
         //las contraseñas coinciden y redirigimos a funciones de usuario
         header('Location:funcionesAdministrador.php');
     }else if(!password_verify($contra, $persona['contra'])){
