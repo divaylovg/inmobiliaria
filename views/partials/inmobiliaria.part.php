@@ -41,15 +41,25 @@
                 <li class="nav-item">
                     <a class="nav-link" href="registrarUsuario.php">Registro usuarios</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="loguearUsuario.php">Login</a>
-                </li>
+
                 <li class="nav-item">
                     <a class="nav-link" href="contacto.html">Contacto</a>
                 </li>
+
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Login
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item" href="loguearUsuario.php">Entrar Usuario</a>
+                        <a class="dropdown-item" href="loguearEmpleado.php">Entrar Empleado</a>
+                        <a class="dropdown-item" href="loguearAdministrador.php">Entrar Administrador</a>
+                    </div>
+                </div>
+
             </ul>
             <form class="form-inline my-2 my-md-0">
-                <input class="form-control" type="text" placeholder="Buscar">
+                <input class="form-control" type="text" placeholder="Buscar por identificador">
             </form>
         </div>
     </nav>

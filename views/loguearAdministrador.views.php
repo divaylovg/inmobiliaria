@@ -6,7 +6,7 @@ require __DIR__ . "/partials/inmobiliaria.part.php";
 
 
 <form action="loguearAdministrador.php" method="POST" enctype="multipart/form-data">
-    <h1>Seccion de administrador, introduce tus datos a continuacion.</h1>
+    <h1>Seccion de administrador, introduce tus datos a continuacion para dar de alta nuevos empleados.</h1>
 
     <div class="form-group">
         <label for="formGroupExampleInput">Usuario</label>

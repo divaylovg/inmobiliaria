@@ -2,7 +2,7 @@
 
 session_start();
 
-require "views/loguearUsuario.views.php";
+require "views/loguearAdministrador.views.php";
 
 require_once 'Connection.php';
 $PDO=Connection::make();

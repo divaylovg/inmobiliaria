@@ -147,13 +147,6 @@ if ($_SERVER['REQUEST_METHOD']==='POST') {
 
 
 
-
-
-
-
-
-
-
 <!-- Footer -->
 <footer class="py-1 bg-dark ">
     <div class="container">

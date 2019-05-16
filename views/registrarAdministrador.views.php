@@ -5,8 +5,8 @@ require __DIR__ . "/partials/inmobiliaria.part.php";
 
 
 
-<form action="registrarUsuario.php" method="POST" enctype="multipart/form-data">
-    <h1>Aqui puedes registrar tus empleados</h1>
+<form action="registrarAdministrador.php" method="POST" enctype="multipart/form-data">
+    <h1>Registro de administrador.</h1>
 
     <div class="form-group">
         <label for="formGroupExampleInput">Usuario</label>
@@ -29,7 +29,6 @@ require __DIR__ . "/partials/inmobiliaria.part.php";
     <div class="form-group">
         <label for="exampleInputEmail1">Email</label>
         <input type="email" class="form-control" aria-describedby="emailHelp" name="correo" placeholder="Ejemplo: divaylov@ieslavereda.es">
-        <small class="form-text text-muted">Nunca vamos a dar su informacion a terceros.</small>
     </div>
     <div class="form-group">
         <label for="exampleInputPassword1">Contraseña</label>

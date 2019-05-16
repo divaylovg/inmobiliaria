@@ -1,13 +1,13 @@
 <?php
 session_start();
 
-require "views/registrarUsuario.views.php";
+require "views/registrarAdministrador.views.php";
 require_once 'Connection.php';
 $PDO=Connection::make();
 
 if ($_SERVER['REQUEST_METHOD']==='POST') {
 
-    $sql="INSERT INTO propietario (usuario, nombre, apellido, telefono, correo,contra) VALUES (:usuario,:nombre,:apellido, :telefono, :correo, :contra)";
+    $sql="INSERT INTO administrador (usuario, nombre, apellido, telefono, correo,contra) VALUES (:usuario,:nombre,:apellido, :telefono, :correo, :contra)";
     $usuario=$_POST['usuario'];
     $apellido=$_POST['apellido'];
     $telefono=$_POST['telefono'];
@@ -38,7 +38,7 @@ if ($_SERVER['REQUEST_METHOD']==='POST') {
                                 alert("El usuario se ha registrado correctamente");
                             </script>
                             <?
-                            header('Location:loguearUsuario.php');
+                            header('Location: loguearUsuario.php');
 
                         }else{
                             echo "Falta contraseña";
