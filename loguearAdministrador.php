@@ -27,15 +27,10 @@ if ($_SERVER['REQUEST_METHOD']==='POST') {
         <?
 
     }else if (password_verify($contra, $persona["contra"])){
-        echo $usuario;
-        echo $persona['id'];
 
-        $_SESSION["id"]=$persona['id'];
+        $_SESSION["idAdministrador"]=$persona['id'];
 
-        include $_SESSION["id"];
-
-        //las contraseñas coinciden y redirigimos a funciones de usuario
-        header('Location:funcionesAdministrador.php');
+        header('Location:/inmobiliaria/funcionesAdministrador.php');
     }else if(!password_verify($contra, $persona['contra'])){
         ?>  <script>
             alert("La contraseña no coincide, vuelva a intentarlo");

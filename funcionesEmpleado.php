@@ -1,7 +1,19 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: dani
- * Date: 11/05/19
- * Time: 11:08
- */
+session_start();
+
+require "views/funcionesEmpleado.views.php";
+
+
+if ($_SERVER['REQUEST_METHOD']==='PUT') {
+
+
+}
+
+
+if ($_SERVER['REQUEST_METHOD']==='DELETE') {
+
+
+}
+
+
+?>

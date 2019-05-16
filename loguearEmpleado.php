@@ -27,12 +27,10 @@ if ($_SERVER['REQUEST_METHOD']==='POST') {
         <?
 
     }else if (password_verify($contra, $persona["contra"])){
-        echo $usuario;
-        echo $persona['id'];
 
-        $_SESSION["id"]=$persona['id'];
 
-        include $_SESSION["id"];
+        $_SESSION["idEmpleado"]=$persona['id'];
+
 
         //las contraseñas coinciden y redirigimos a funciones de usuario
         header('Location:funcionesEmpleado.php');

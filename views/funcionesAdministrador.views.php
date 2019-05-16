@@ -5,7 +5,7 @@ require __DIR__ . "/partials/inmobiliaria.part.php";
 
 
 
-<form action="registrarUsuario.php" method="POST" enctype="multipart/form-data">
+<form action="funcionesAdministrador.php" method="POST" enctype="multipart/form-data">
     <h1>Aqui puedes registrar tus empleados</h1>
 
     <div class="form-group">

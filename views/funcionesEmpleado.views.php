@@ -1,212 +1,46 @@
 <?php
-require __DIR__ . "/partials/inmobiliaria.part.php";
+    require __DIR__ . "/partials/inmobiliaria.part.php";
+
+    require_once 'Connection.php';
+    $PDO=Connection::make();
+    //OBTENEMOS LOS PISOS PARA ALQUILAR Y PARA VENDER
+    if ($_SERVER['REQUEST_METHOD']==='GET') {
+
+        $stmt=$PDO->prepare("SELECT * FROM inmueble where alquiler>0");
+        $stmt->setFetchMode(PDO::FETCH_CLASS|PDO::FETCH_PROPS_LATE,"inmueble");
+        $stmt->execute();
+        $alquiler=$stmt->fetchAll();
+
+        $stmt=$PDO->prepare("SELECT * FROM inmueble where venta>0");
+        $stmt->setFetchMode(PDO::FETCH_CLASS|PDO::FETCH_PROPS_LATE,"inmueble");
+        $stmt->execute();
+        $venta=$stmt->fetchAll();
+
+        //print_r($alquiler);
+
+    }
+
 
 ?>
 
 
 
-<form action="funcionesUsuario.php" method="POST" enctype="multipart/form-data">
-    <h1>Aqui puedes insertar los inmuebles que desees para que se puedan ver en nuestra web</h1>
+<form action="funcionesEmpleado.php" method="PUT" enctype="multipart/form-data">
+    <h1>Podeis alquilar vender y borrar pisos.</h1>
     <div class="form-row">
 
 
-        <div class="col-lg-3 col-md-6 mb-4">
-            <label for="validationTooltip01">Precio alquiler</label>
-            <input type="text" name="alquiler" placeholder="Entero" >
-        </div>
-
-        <div class="col-lg-3 col-md-6 mb-4">
-            <label for="validationTooltip01">Precio venta</label>
-            <input type="text"  name="venta" placeholder="Entero" >
-        </div>
-
-
-        <div class="col-lg-3 col-md-6 mb-4">
-        <label for="validationTooltip01">Metros cuadrados</label>
-        <input type="text" class="form-control" name="metros" placeholder="Metros"  required>
-    </div>
-
-    <div class="col-lg-3 col-md-6 mb-4">
-        <label for="validationTooltip01">Calle</label>
-        <input type="text" class="form-control" name="calle" placeholder="Nombre de la calle" required>
-    </div>
-
-
-
-    <div class="col-lg-3 col-md-6 mb-4">
-        <label for="validationTooltip01">Numero</label>
-        <input type="text" class="form-control" name="numero" placeholder="Entero"  required>
-    </div>
-    <div class="col-lg-3 col-md-6 mb-4">
-        <label for="validationTooltip01">Puerta</label>
-        <input type="text" class="form-control" name="puerta" placeholder="Entero"  required>
-    </div>
-    <div class="col-lg-3 col-md-6 mb-4">
-        <label for="validationTooltip01">Ciudad</label>
-        <input type="text" class="form-control"  name="ciudad" placeholder="First name"  required>
-    </div>
-
-
-    <div class="col-lg-3 col-md-6 mb-4">
-        <label for="validationTooltip01">Telefono</label>
-        <input type="text" class="form-control" name="telefonoPropietario" placeholder="Entero"  required>
-    </div>
-
-
-
-        <div class="col-md-4 mb-3">
-            <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Tipo inmueble</label>
-            <select class="custom-select my-1 mr-sm-2" name="tipo" id="habitaciones">
-                <option selected value="chalet">Chalet</option>
-                <option value="finca">Finca</option>
-                <option value="piso">Piso</option>
-                <option value="terreno">Terreno</option>
-                <option value="garaje">Garaje</option>
-                <option value="trastero">Trastero</option>
-            </select>
-        </div>
-
-        <div class="col-md-4 mb-3">
-            <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Ascensor</label>
+        <div class="col">
+            <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Selecciona piso para alquilar por su id</label>
             <select class="custom-select my-1 mr-sm-2" name="ascensor" id="habitaciones">
-                <option selected value=null>No</option>
-                <option value="si">Si</option>
+
+                <?php foreach($alquiler as $a): ?>
+
+                <option value=<?php echo $a['id'];?>><?php echo $a['id'];?></option>
+
+                <?php endforeach; ?>
+
             </select>
-        </div>
-
-        <div class="col-md-4 mb-3">
-        <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Habitaciones</label>
-        <select class="custom-select my-1 mr-sm-2" name="habitaciones" id="habitaciones">
-            <option selected value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-            <option value="6">6</option>
-            <option value="7">7</option>
-            <option value="8">8</option>
-            <option value="9">9</option>
-            <option value="10">10</option>
-        </select>
-        </div>
-
-        <div class="col-md-4 mb-3">
-            <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Piso</label>
-            <select class="custom-select my-1 mr-sm-2" name="piso" id="habitaciones">
-                <option selected value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-                <option value="6">6</option>
-                <option value="7">7</option>
-                <option value="8">8</option>
-                <option value="9">9</option>
-                <option value="11">11</option>
-                <option value="12">12</option>
-                <option value="13">13</option>
-                <option value="14">14</option>
-                <option value="15">15</option>
-                <option value="16">16</option>
-                <option value="17">17</option>
-                <option value="18">18</option>
-                <option value="19">19</option>
-                <option value="20">20</option>
-            </select>
-        </div>
-
-        <div class="col-md-4 mb-3">
-            <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Provincia</label>
-            <select class="custom-select my-1 mr-sm-2" name="provincia" id="provincia">
-                <option value='alava'>Álava</option>
-                <option value='albacete'>Albacete</option>
-                <option value='alicante'>Alicante/Alacant</option>
-                <option value='almeria'>Almería</option>
-                <option value='asturias'>Asturias</option>
-                <option value='avila'>Ávila</option>
-                <option value='badajoz'>Badajoz</option>
-                <option value='barcelona'>Barcelona</option>
-                <option value='burgos'>Burgos</option>
-                <option value='caceres'>Cáceres</option>
-                <option value='cadiz'>Cádiz</option>
-                <option value='cantabria'>Cantabria</option>
-                <option value='castellon'>Castellón/Castelló</option>
-                <option value='ceuta'>Ceuta</option>
-                <option value='ciudadreal'>Ciudad Real</option>
-                <option value='cordoba'>Córdoba</option>
-                <option value='cuenca'>Cuenca</option>
-                <option value='girona'>Girona</option>
-                <option value='laspalmas'>Las Palmas</option>
-                <option value='granada'>Granada</option>
-                <option value='guadalajara'>Guadalajara</option>
-                <option value='guipuzcoa'>Guipúzcoa</option>
-                <option value='huelva'>Huelva</option>
-                <option value='huesca'>Huesca</option>
-                <option value='illesbalears'>Illes Balears</option>
-                <option value='jaen'>Jaén</option>
-                <option value='acoruña'>A Coruña</option>
-                <option value='larioja'>La Rioja</option>
-                <option value='leon'>León</option>
-                <option value='lleida'>Lleida</option>
-                <option value='lugo'>Lugo</option>
-                <option value='madrid'>Madrid</option>
-                <option value='malaga'>Málaga</option>
-                <option value='melilla'>Melilla</option>
-                <option value='murcia'>Murcia</option>
-                <option value='navarra'>Navarra</option>
-                <option value='ourense'>Ourense</option>
-                <option value='palencia'>Palencia</option>
-                <option value='pontevedra'>Pontevedra</option>
-                <option value='salamanca'>Salamanca</option>
-                <option value='segovia'>Segovia</option>
-                <option value='sevilla'>Sevilla</option>
-                <option value='soria'>Soria</option>
-                <option value='tarragona'>Tarragona</option>
-                <option value='santacruztenerife'>Santa Cruz de Tenerife</option>
-                <option value='teruel'>Teruel</option>
-                <option value='toledo'>Toledo</option>
-                <option value='valencia'>Valencia/Valéncia</option>
-                <option value='valladolid'>Valladolid</option>
-                <option value='vizcaya'>Vizcaya</option>
-                <option value='zamora'>Zamora</option>
-                <option value='zaragoza'>Zaragoza</option>
-            </select>
-        </div>
-        <div class="col-md-4 mb-3">
-            <label for="validationTooltip01">Codigo postal</label>
-            <input type="text" class="form-control" name="cp" placeholder="CP"  required>
-        </div>
-
-
-        <div class="col-md-4 mb-3">
-            <label for="num">Foto 1 </label>
-            <input type="file" name="foto1" value="">
-        </div>
-
-        <div class="col-md-4 mb-3">
-            <label for="num">Foto 2 </label>
-            <input type="file" name="foto2" value="">
-        </div>
-
-        <div class="col-md-4 mb-3">
-            <label for="num">Foto 3 </label>
-            <input type="file" name="foto3" value="">
-        </div>
-
-        <div class="col-md-4 mb-3">
-            <label for="num">Foto 4 </label>
-            <input type="file" name="foto4" value="">
-        </div>
-
-        <div class="col-md-4 mb-3">
-            <label for="num">Foto 5 </label>
-            <input type="file" name="foto5" value="">
-        </div>
-
-
-        <div class="form-group col-12">
-            <label for="coment">Descripcion del inmueble</label>
-            <textarea class="form-control" id="descripcion" name="descripcion"  placeholder="Describenos de la mejor manera las caracteristicas del inmueble. Recuerda que de eso depende su venta/alquiler." rows="3"></textarea>
         </div>
 
     </div>
@@ -214,6 +48,35 @@ require __DIR__ . "/partials/inmobiliaria.part.php";
     </div>
 </br>
 </form>
+
+
+<form action="funcionesEmpleadoVender.php" method="POST" enctype="multipart/form-data">
+    <div class="form-row">
+
+
+        <div class="col">
+            <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Selecciona piso para vender o borrar de la base de datos</label>
+            <select class="custom-select my-1 mr-sm-2" name="ascensor" id="habitaciones">
+
+                <?php foreach($venta as $v): ?>
+
+                    <option value=<?php echo $v['id'];?>><?php echo $v['id'];?></option>
+
+                <?php endforeach; ?>
+
+            </select>
+        </div>
+
+    </div>
+    <div>    <input type="submit" value="Enviar"></input>
+    </div>
+    </br>
+</form>
+
+
+
+
+
 
 
 
