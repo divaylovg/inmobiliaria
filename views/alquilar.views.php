@@ -20,7 +20,7 @@ if ($_SERVER['REQUEST_METHOD']==='GET') {
 
 ?>
 <div class="container">
-    <form action="buscar.php" method="POST" enctype="multipart/form-data">
+    <form action="alquilar.php" method="POST" enctype="multipart/form-data">
 
 
 <div class="row text-center">
@@ -32,8 +32,7 @@ if ($_SERVER['REQUEST_METHOD']==='GET') {
                     <p class="card-text">
                         Cuanto es tu presupuesto maximo?
                     </p>
-                        <input type="text" name="dinero" value="" required>
-
+                        <input type="text" name="dinero" id="dinero" value="" required>
                 </div>
             </div>
         </div>
@@ -46,7 +45,7 @@ if ($_SERVER['REQUEST_METHOD']==='GET') {
                 <p class="card-text">
                     Elige la ciudad en la que deseas vivir.
                 </p>
-                    <select name="campo">
+                    <select name="tipo">
                         <?php foreach($tipos as $tipo): ?>
                             <option value=<?php echo $tipo['tipo']?> name="tipo"><?php echo $tipo['tipo'] ?></option>;
                         <?php endforeach; ?>
@@ -64,7 +63,7 @@ if ($_SERVER['REQUEST_METHOD']==='GET') {
                 <p class="card-text">
                     Elige la ciudad en la que deseas vivir.
                 </p>
-                    <select name="campo">
+                    <select name="ciudad">
                         <?php foreach($ciudades as $ciudad): ?>
                             <option value=<?php echo $ciudad['ciudad']?> name="ciudad"><?php echo $ciudad['ciudad'] ?></option>;
                         <?php endforeach; ?>
