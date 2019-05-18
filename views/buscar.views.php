@@ -9,7 +9,6 @@ if ($_SERVER['REQUEST_METHOD']==='GET') {
     $stmt->setFetchMode(PDO::FETCH_CLASS|PDO::FETCH_PROPS_LATE,"inmueble");
     $stmt->execute();
     $ciudades=$stmt->fetchAll();
-    print_r($ciudades);
 }
 
 
@@ -19,7 +18,7 @@ if ($_SERVER['REQUEST_METHOD']==='GET') {
 <div class="row text-center">
      <div class="col-lg-3 col-md-6 mb-4">
             <div class="card h-100">
-                <img class="card-img-top" src="img/euro.jpg">
+                <img class="card-img-top" src="img/euro3.jpg">
                 <div class="card-body">
                     <h4 class="card-title">Dinero </h4>
                     <p class="card-text">
@@ -37,15 +36,60 @@ if ($_SERVER['REQUEST_METHOD']==='GET') {
             </div>
         </div>
 
+    <div class="col-lg-3 col-md-6 mb-4">
+        <div class="card h-100">
+            <img class="card-img-top " src="img/ciudad3.jpg">
+            <div class="card-body">
+                <h4 class="card-title">Ciudad </h4>
+                <p class="card-text">
+                    Elige la ciudad en la que deseas vivir.
+                </p>
+                <form action="buscar.php" method="POST" enctype="multipart/form-data">
+                    <select name="campo">
+                        <?php foreach($ciudades as $ciudad): ?>
+                            <option value=<?php echo $ciudad['ciudad']?> name="ciudad"><?php echo $ciudad['ciudad'] ?></option>;
+                        <?php endforeach; ?>
+                    </select>
+            </div>
+            <div class="card-footer">
+                <input class="btn btn-primary" type="submit" value="Buscar"></input>
+            </div>
+            </form>
+
+        </div>
+    </div>
 
 
     <div class="col-lg-3 col-md-6 mb-4">
         <div class="card h-100">
-            <img class="card-img-top" src="img/ciudad3.jpg">
+            <img class="card-img-top " src="img/ciudad3.jpg">
             <div class="card-body">
-                <h4 class="card-title">Dinero </h4>
+                <h4 class="card-title">Ciudad </h4>
                 <p class="card-text">
-                    Cuanto es tu presupuesto maximo?
+                    Elige la ciudad en la que deseas vivir.
+                </p>
+                <form action="buscar.php" method="POST" enctype="multipart/form-data">
+                    <select name="campo">
+                        <?php foreach($ciudades as $ciudad): ?>
+                            <option value=<?php echo $ciudad['ciudad']?> name="ciudad"><?php echo $ciudad['ciudad'] ?></option>;
+                        <?php endforeach; ?>
+                    </select>
+            </div>
+            <div class="card-footer">
+                <input class="btn btn-primary" type="submit" value="Buscar"></input>
+            </div>
+            </form>
+
+        </div>
+    </div>
+
+    <div class="col-lg-3 col-md-6 mb-4">
+        <div class="card h-100">
+            <img class="card-img-top " src="img/metros4.jpg">
+            <div class="card-body">
+                <h4 class="card-title">Habitaciones </h4>
+                <p class="card-text">
+                    Cuanto es el minimo de habitaciones que buscas?
                 </p>
                 <form action="buscar.php" method="POST" enctype="multipart/form-data">
                     <input type="text" name="dinero" value="">
