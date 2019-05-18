@@ -1,7 +1,7 @@
 <?php
 
 session_start();
-
+ob_start();
 require "views/loguearUsuario.views.php";
 
 require_once 'Connection.php';
@@ -24,22 +24,20 @@ if ($_SERVER['REQUEST_METHOD']==='POST') {
         ?><script>
             alert("No se ha encontrado usuario con los datos indicados");
         </script>
-        <?
+        <?php
 
     }else if (password_verify($contra, $persona["contra"])){
-        echo $usuario;
-        echo $persona['id'];
 
         $_SESSION["id"]=$persona['id'];
 
-
         //las contraseñas coinciden y redirigimos a funciones de usuario
         header('Location:funcionesUsuario.php');
+        exit();
     }else if(!password_verify($contra, $persona['contra'])){
         ?>  <script>
-                alert("La contraseña no coincide, vuelva a intentarlo");
-            </script>
-        <?
+            alert("La contraseña no coincide, vuelva a intentarlo");
+        </script>
+        <?php
     }
 
 

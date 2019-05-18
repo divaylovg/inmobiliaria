@@ -11,20 +11,7 @@ if ($_SERVER['REQUEST_METHOD']==='GET') {
     $stmt->setFetchMode(PDO::FETCH_CLASS|PDO::FETCH_PROPS_LATE,"inmueble");
     $stmt->execute();
     $objetos=$stmt->fetchAll();
-
-    //obtenemos el total de objetos que tenemos en nuestra base de datos en la tabla inmueble. Vamos a imprimir los primeros 6 solo.
-    /*  echo $todos=sizeof($objetos);
-      for ($i=0;$i<8;$i++){
-          echo $objetos[$i]['id'];
-          echo $objetos[$i]['tipo'];
-          echo $objetos[$i]['alquiler'];
-          ?></br><?php
-      }*/
 }
-
-
-
-
 ?>
 
 
@@ -34,11 +21,13 @@ if ($_SERVER['REQUEST_METHOD']==='GET') {
     <!--  Header -->
     <header class="jumbotron my-4">
         <h1 class="display-3">Queremos encontrar tu hogar</h1>
+        <p>Que nos diferencia? En nuestra empresa no existe la palabra exclusividad!</p>
+        <p>La mayoria de inmobiliarias les obliga a tener su inmueble durante meses por contrato pero nosotros creemos en nuestros agentes y como grandes profesionales que son les garantizamos la venta de su inmueble. Si quiere usted mismo puede dar de baja su piso! Sin ningun compromismo.</p>
         <p>Les ofrecemos asesoramiento totalmente gratuito. Tasacion de su propiedad. Compra venta y alquiler de toda clase de inmuebles.</p>
-        <p>A continuacion nuestra mejor seleccion de inmuebles</p>
         <a href="#" class="btn btn-primary btn-lg">Quiero saber mas!</a>
     </header>
 
+    <h1 class="text-center ">A continuacion nuestra mejor seleccion de inmuebles</h1>
     <div class="row text-center">
 
         <?php foreach($objetos as $objeto): ?>
@@ -56,9 +45,8 @@ if ($_SERVER['REQUEST_METHOD']==='GET') {
                             Tipo de inmueble: <?php echo $objeto['tipo'];?></br>
                             Habitaciones: <?php echo $objeto['habitaciones'];?></br>
                             Metros cuadrados: <?php echo $objeto['metros'];?></br>
-                            Precio de venta: <?php echo $objeto['venta'];?></br>
-                            Precio de alquiler: <?php echo $objeto['alquiler'];?>/mes.</br>
-                            Identificador del inmueble:
+                            Altura: <?php echo $objeto['piso'];?></br>
+                            Numero de referencia:
                         </p>
                         <form action="masInformacion.php" method="POST" enctype="multipart/form-data">
                             <input type="text" readonly name="id" value=<?php echo $objeto['id'];?> />

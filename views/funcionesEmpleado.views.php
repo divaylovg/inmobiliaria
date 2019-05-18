@@ -25,14 +25,14 @@
 
 
 
-<form action="funcionesEmpleado.php" method="PUT" enctype="multipart/form-data">
+<form action="funcionesEmpleado.php" method="POST" enctype="multipart/form-data">
     <h1>Podeis alquilar vender y borrar pisos.</h1>
     <div class="form-row">
 
 
         <div class="col">
-            <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Selecciona piso para alquilar por su id</label>
-            <select class="custom-select my-1 mr-sm-2" name="ascensor" id="habitaciones">
+            <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Selecciona piso para alquilar por su <b>numero de referencia</b></label>
+            <select class="custom-select my-1 mr-sm-2" name="id" id="id">
 
                 <?php foreach($alquiler as $a): ?>
 
@@ -55,8 +55,8 @@
 
 
         <div class="col">
-            <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Selecciona piso para vender o borrar de la base de datos</label>
-            <select class="custom-select my-1 mr-sm-2" name="ascensor" id="habitaciones">
+            <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Selecciona piso para vender o borrar de la base de datos por su <b>numero de referencia</b></label>
+            <select class="custom-select my-1 mr-sm-2" name="id" id="id">
 
                 <?php foreach($venta as $v): ?>
 

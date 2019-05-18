@@ -38,7 +38,7 @@ if ($_SERVER['REQUEST_METHOD']==='POST') {
                                 alert("El usuario se ha registrado correctamente");
                             </script>
                             <?
-                            header('Location:loguearUsuario.php');
+                            header('Location: loguearUsuario.php');
 
                         }else{
                             echo "Falta contraseña";

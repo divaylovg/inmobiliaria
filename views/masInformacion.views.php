@@ -9,7 +9,6 @@ $PDO=Connection::make();
 if ($_SERVER['REQUEST_METHOD']==='POST') {
 
     $sql = "SELECT * from inmueble where id=:id";
-    // me pasa el id vacio y no se porque
     $id=$_POST['id'];
 
     $statement=$PDO->prepare($sql);
@@ -20,7 +19,6 @@ if ($_SERVER['REQUEST_METHOD']==='POST') {
 
 
     if (!$inmueble){
-        //no hay usuario que se llame asi
         ?><script>
             alert("No se ha encontrado inmueble con el id indicado.");
         </script>
@@ -36,17 +34,6 @@ if ($_SERVER['REQUEST_METHOD']==='POST') {
                 array_push($arImg,$inmueble[$nombre]);
             }
         }
-        //print_r($arImg);
-
-/*
-        echo $inmueble['id'];?>
-        </br>
-        <?php echo $inmueble['id'];?>
-        </br>
-        <?php echo $inmueble['foto1'];?></br>
-        <?php echo $inmueble['provincia'];?></br>
-        <?php echo $inmueble['metros'];?><?php
-*/
     }
 }
 
@@ -92,7 +79,7 @@ if ($_SERVER['REQUEST_METHOD']==='POST') {
 <table class="table table-striped">
     <tbody>
     <tr>
-        <th scope="row">ID:</th>
+        <th scope="row">Referencia:</th>
         <td><?php echo $inmueble['id'];?></td>
         <th>Tipo:</th>
         <td><?php echo $inmueble['tipo'];?></td>

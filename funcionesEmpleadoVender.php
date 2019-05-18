@@ -11,14 +11,14 @@ if ($_SERVER['REQUEST_METHOD']==='POST') {
     $id=$_POST['id'];
 
 
-    $sql="UPDATE inmueble SET alquiler=0 where id=:id";
+    $sql="DELETE from inmueble where inmueble.id=:id";
     $statement=$PDO->prepare($sql);
     $statement->bindParam(':id', $id);
 
     $statement->execute();
 
     ?>  <script>
-        alert("El piso se ha alquilado");
+        alert("Se ha completado la peticion.");
     </script>
     <?
 
