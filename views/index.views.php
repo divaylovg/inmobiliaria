@@ -29,7 +29,6 @@ if ($_SERVER['REQUEST_METHOD']==='GET') {
 
     <h1 class="text-center ">A continuacion nuestra mejor seleccion de inmuebles</h1>
     <div class="row text-center">
-
         <?php foreach($objetos as $objeto): ?>
             <div class="col-lg-3 col-md-6 mb-4">
 

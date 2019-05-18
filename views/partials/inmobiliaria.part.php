@@ -36,7 +36,7 @@
                     <a class="nav-link" href="index.php">Inicio <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="buscar.php">Buscar inmuebles</a>
+                    <a class="nav-link" href="comprarAlquilar.php">Buscar inmuebles</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="registrarUsuario.php">Registro usuarios</a>

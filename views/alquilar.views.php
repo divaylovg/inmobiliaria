@@ -13,6 +13,7 @@ if ($_SERVER['REQUEST_METHOD']==='GET') {
 
 
 ?>
+<div class="container">
 
 
 <div class="row text-center">
@@ -132,7 +133,7 @@ if ($_SERVER['REQUEST_METHOD']==='GET') {
 </footer>
 
 
-
+</div>
 <!-- Bootstrap JavaScript -->
 <script src="js/jquery-3.3.1.min.js"></script>
 <script src="js/bootstrap.js"></script>
