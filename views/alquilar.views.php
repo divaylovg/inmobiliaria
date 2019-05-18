@@ -4,16 +4,23 @@ require_once 'Connection.php';
 $PDO=Connection::make();
 
 if ($_SERVER['REQUEST_METHOD']==='GET') {
-
+    //obtenemos todos los inmuebles agrupando por ciudad para que no nos salga mas de una vez las repetidas
     $stmt=$PDO->prepare("SELECT * FROM inmueble group by ciudad");
     $stmt->setFetchMode(PDO::FETCH_CLASS|PDO::FETCH_PROPS_LATE,"inmueble");
     $stmt->execute();
     $ciudades=$stmt->fetchAll();
+
+    //obtenemos todos los inmuebles por tipo y agrupando para que no se repita
+    $stmt=$PDO->prepare("SELECT * FROM inmueble group by tipo");
+    $stmt->setFetchMode(PDO::FETCH_CLASS|PDO::FETCH_PROPS_LATE,"inmueble");
+    $stmt->execute();
+    $tipos=$stmt->fetchAll();
 }
 
 
 ?>
 <div class="container">
+    <form action="buscar.php" method="POST" enctype="multipart/form-data">
 
 
 <div class="row text-center">
@@ -25,38 +32,26 @@ if ($_SERVER['REQUEST_METHOD']==='GET') {
                     <p class="card-text">
                         Cuanto es tu presupuesto maximo?
                     </p>
-                    <form action="buscar.php" method="POST" enctype="multipart/form-data">
-                        <input type="text" name="dinero" value="">
+                        <input type="text" name="dinero" value="" required>
 
                 </div>
-                    <div class="card-footer">
-                        <input class="btn btn-primary" type="submit" value="Buscar"></input>
-                    </div>
-                </form>
-
             </div>
         </div>
 
     <div class="col-lg-3 col-md-6 mb-4">
         <div class="card h-100">
-            <img class="card-img-top " src="img/ciudad3.jpg">
+            <img class="card-img-top " src="img/ciudad.jpg">
             <div class="card-body">
-                <h4 class="card-title">Ciudad </h4>
+                <h4 class="card-title">Tipo de vivienda </h4>
                 <p class="card-text">
                     Elige la ciudad en la que deseas vivir.
                 </p>
-                <form action="buscar.php" method="POST" enctype="multipart/form-data">
                     <select name="campo">
-                        <?php foreach($ciudades as $ciudad): ?>
-                            <option value=<?php echo $ciudad['ciudad']?> name="ciudad"><?php echo $ciudad['ciudad'] ?></option>;
+                        <?php foreach($tipos as $tipo): ?>
+                            <option value=<?php echo $tipo['tipo']?> name="tipo"><?php echo $tipo['tipo'] ?></option>;
                         <?php endforeach; ?>
                     </select>
             </div>
-            <div class="card-footer">
-                <input class="btn btn-primary" type="submit" value="Buscar"></input>
-            </div>
-            </form>
-
         </div>
     </div>
 
@@ -69,18 +64,12 @@ if ($_SERVER['REQUEST_METHOD']==='GET') {
                 <p class="card-text">
                     Elige la ciudad en la que deseas vivir.
                 </p>
-                <form action="buscar.php" method="POST" enctype="multipart/form-data">
                     <select name="campo">
                         <?php foreach($ciudades as $ciudad): ?>
                             <option value=<?php echo $ciudad['ciudad']?> name="ciudad"><?php echo $ciudad['ciudad'] ?></option>;
                         <?php endforeach; ?>
                     </select>
             </div>
-            <div class="card-footer">
-                <input class="btn btn-primary" type="submit" value="Buscar"></input>
-            </div>
-            </form>
-
         </div>
     </div>
 
@@ -90,20 +79,31 @@ if ($_SERVER['REQUEST_METHOD']==='GET') {
             <div class="card-body">
                 <h4 class="card-title">Habitaciones </h4>
                 <p class="card-text">
-                    Cuanto es el minimo de habitaciones que buscas?
-                </p>
-                <form action="buscar.php" method="POST" enctype="multipart/form-data">
-                    <input type="text" name="dinero" value="">
+                    Numero de habitaciones.
 
+                </p>
+                    <select class="custom-select my-1 mr-sm-2" name="habitaciones" id="habitaciones">
+                        <option value="0">Sin habitaciones<option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                    </select>
             </div>
-            <div class="card-footer">
-                <input class="btn btn-primary" type="submit" value="Buscar"></input>
-            </div>
-            </form>
+
 
         </div>
     </div>
-
+    <div class="card-footer col">
+        <input class="btn btn-primary" type="submit" value="Buscar"></input>
+    </div>
+    </form>
 </div>
 
 
