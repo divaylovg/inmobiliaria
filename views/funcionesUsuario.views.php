@@ -1,6 +1,11 @@
 <?php
 require __DIR__ . "/partials/inmobiliaria.part.php";
 
+require_once 'Connection.php';
+$PDO=Connection::make();
+$idPropietario=$_SESSION['id'];
+
+
 ?>
 
 
@@ -216,8 +221,15 @@ require __DIR__ . "/partials/inmobiliaria.part.php";
 </form>
 
 
+<div class="container">
 
-
+    <div class="row justify-content-around">
+        <div class="col">
+            <a title="Borra tus inmuebles" href="usuarioBorraInmueble.php">
+                <img src="img/borrar.jpg" style="width:100%" href="usuarioBorraInmueble.php">
+        </div>
+    </div>
+</div>
 
 
 

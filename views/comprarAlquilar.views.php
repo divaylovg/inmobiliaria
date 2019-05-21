@@ -19,7 +19,7 @@ if ($_SERVER['REQUEST_METHOD']==='GET') {
     <div class="row justify-content-around">
         <div class="col-4">
             <a title="Alquilar" href="alquilar.php">
-                <img src="img/alquilar.jpg" style="width:100%" >
+                <img src="img/alquilar.jpg" style="width:100%" href="alquilar.php">
         </div>
         <div class="col-4">
             <a title="Vender" href="comprar.php">

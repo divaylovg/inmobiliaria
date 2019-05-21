@@ -7,7 +7,6 @@ require_once 'Connection.php';
 $PDO=Connection::make();
 
 $idPropietario=$_SESSION['id'];
-echo $idPropietario;
 
 if ($_SERVER['REQUEST_METHOD']==='POST') {
 
