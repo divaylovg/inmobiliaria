@@ -20,7 +20,7 @@ if ($_SERVER['REQUEST_METHOD']==='GET') {
 
 ?>
 <div class="container">
-    <form action="imprimirAlquiler.php" method="POST" enctype="multipart/form-data">
+    <form action="imprimirComprar.php" method="POST" enctype="multipart/form-data">
 
 
 <div class="row text-center">

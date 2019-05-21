@@ -5,12 +5,31 @@ $PDO=Connection::make();
 
 $objetos=[];
 
-if ($_SERVER['REQUEST_METHOD']==='GET') {
+if ($_SERVER['REQUEST_METHOD']==='POST') {
+//SELECT * FROM inmueble where alquiler< 5000 and tipo = 'chalet' and ciudad = 'Valencia' and habitaciones< 4
+    $dinero=$_POST['dinero'];
+    $tipo=$_POST['tipo'];
+    $ciudad=$_POST['ciudad'];
+    $habitaciones=$_POST['habitaciones'];
 
-    $stmt=$PDO->prepare("SELECT * FROM inmueble");
-    $stmt->setFetchMode(PDO::FETCH_CLASS|PDO::FETCH_PROPS_LATE,"inmueble");
-    $stmt->execute();
-    $objetos=$stmt->fetchAll();
+
+    $statement=$PDO->prepare("SELECT * FROM inmueble where alquiler<:dinero and alquiler>0  and tipo = :tipo and ciudad = :ciudad and habitaciones>= :habitaciones");
+    $statement->setFetchMode(PDO::FETCH_CLASS|PDO::FETCH_PROPS_LATE,"inmueble");
+    $statement->bindParam(':dinero', $dinero);
+    $statement->bindParam(':tipo', $tipo);
+    $statement->bindParam(':ciudad', $ciudad);
+    $statement->bindParam(':habitaciones', $habitaciones);
+    $statement->execute();
+    $objetos=$statement->fetchAll();
+   // print_r($objetos);
+
+    if (!$objetos) {
+        //no hay objetos  redirigimos atras
+        header('Location:alquilar.php');
+
+    }
+
+
 }
 
 
@@ -20,16 +39,6 @@ if ($_SERVER['REQUEST_METHOD']==='GET') {
 
 <div class="container">
 
-    <!--  Header -->
-    <header class="jumbotron my-4">
-        <h1 class="display-3">Queremos encontrar tu hogar</h1>
-        <p>Que nos diferencia? En nuestra empresa no existe la palabra exclusividad!</p>
-        <p>La mayoria de inmobiliarias les obliga a tener su inmueble durante meses por contrato pero nosotros creemos en nuestros agentes y como grandes profesionales que son les garantizamos la venta de su inmueble. Si quiere usted mismo puede dar de baja su piso! Sin ningun compromismo.</p>
-        <p>Les ofrecemos asesoramiento totalmente gratuito. Tasacion de su propiedad. Compra venta y alquiler de toda clase de inmuebles.</p>
-        <a href="#" class="btn btn-primary btn-lg">Quiero saber mas!</a>
-    </header>
-
-    <h1 class="text-center ">A continuacion nuestra mejor seleccion de inmuebles</h1>
     <div class="row text-center">
         <?php foreach($objetos as $objeto): ?>
             <div class="col-lg-3 col-md-6 mb-4">
@@ -44,8 +53,9 @@ if ($_SERVER['REQUEST_METHOD']==='GET') {
 
                         <p class="text-left card-text">
                             Tipo de inmueble: <?php echo $objeto['tipo'];?></br>
-                            Habitaciones: <?php echo $objeto['habitaciones'];?></br>
+                            Alquiler: <?php echo $objeto['alquiler'];?></br>
                             Metros cuadrados: <?php echo $objeto['metros'];?></br>
+                            Habitaciones: <?php echo $objeto['habitaciones'];?></br>
                             Altura: <?php echo $objeto['piso'];?></br>
                             Numero de referencia:
                         </p>
@@ -68,7 +78,6 @@ if ($_SERVER['REQUEST_METHOD']==='GET') {
     </div>
 
 </div>
-
 
 
 <!-- Footer -->

@@ -16,6 +16,11 @@
         $stmt->execute();
         $venta=$stmt->fetchAll();
 
+        $stmt=$PDO->prepare("SELECT * FROM inmueble");
+        $stmt->setFetchMode(PDO::FETCH_CLASS|PDO::FETCH_PROPS_LATE,"inmueble");
+        $stmt->execute();
+        $todo=$stmt->fetchAll();
+
         //print_r($alquiler);
 
     }
@@ -55,7 +60,7 @@
 
 
         <div class="col">
-            <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Selecciona piso para vender o borrar de la base de datos por su <b>numero de referencia</b></label>
+            <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Selecciona piso para vender de la base de datos por su <b>numero de referencia</b></label>
             <select class="custom-select my-1 mr-sm-2" name="id" id="id">
 
                 <?php foreach($venta as $v): ?>
@@ -75,9 +80,28 @@
 
 
 
+<form action="funcionesEmpleadoVender.php" method="POST" enctype="multipart/form-data">
+    <div class="form-row">
 
 
+        <div class="col">
+            <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Selecciona piso para borrar de la base de datos por su <b>numero de referencia</b></label>
+            <select class="custom-select my-1 mr-sm-2" name="id" id="id">
 
+                <?php foreach($todo as $t): ?>
+
+                    <option value=<?php echo $t['id'];?>><?php echo $t['id'];?></option>
+
+                <?php endforeach; ?>
+
+            </select>
+        </div>
+
+    </div>
+    <div>    <input type="submit" value="Enviar"></input>
+    </div>
+    </br>
+</form>
 
 
 
