@@ -43,7 +43,7 @@ if ($_SERVER['REQUEST_METHOD']==='GET') {
             <div class="card-body">
                 <h4 class="card-title">Tipo de vivienda </h4>
                 <p class="card-text">
-                    Elige la ciudad en la que deseas vivir.
+                    Elige tipo de vivienda que te interesa.
                 </p>
                     <select name="tipo">
                         <?php foreach($tipos as $tipo): ?>

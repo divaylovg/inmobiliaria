@@ -13,7 +13,14 @@ if ($_SERVER['REQUEST_METHOD']==='GET') {
     $statement->bindParam(':idProp', $idPropietario);
     $statement->execute();
     $susPisos=$statement->fetchAll();
+
+    $statement=$PDO->prepare("SELECT * FROM propietario where id=:idProp");
+    $statement->setFetchMode(PDO::FETCH_CLASS|PDO::FETCH_PROPS_LATE,"propietario");
+    $statement->bindParam(':idProp', $idPropietario);
+    $statement->execute();
+    $datosPropietario=$statement->fetchAll();
 //sus pisos seran los pisos del usuario que posee y puede borrar
+    //print_r($datosPropietario);
 }
 
 ?>
@@ -23,7 +30,7 @@ if ($_SERVER['REQUEST_METHOD']==='GET') {
 <div class="container">
 
 
-    <h1 class="text-center ">Estos son todos sus pisos:</h1>
+    <h1 class="text-center ">Estos son todos tus inmuebles, señor <?php echo $datosPropietario[0]["nombre"]; ?></h1>
     <div class="row text-center">
         <?php foreach($susPisos as $piso): ?>
             <div class="col-lg-3 col-md-6 mb-4">
@@ -44,13 +51,13 @@ if ($_SERVER['REQUEST_METHOD']==='GET') {
                             Altura: <?php echo $piso['piso'];?></br>
                             Numero de referencia:
                         </p>
-                        <form action="masInformacion.php" method="POST" enctype="multipart/form-data">
+                        <form action="usuarioBorraInmueble.php" method="POST" enctype="multipart/form-data">
                             <input type="text" readonly name="id" value=<?php echo $piso['id'];?> />
 
                     </div>
                     <div class="card-footer">
                         <!--class="btn btn-primary submit"-->
-                        <input class="btn btn-primary" type="submit" value="Mas informacion"></input>
+                        <input class="btn btn-primary" type="submit" value="Borrar inmueble"></input>
                     </div>
                          </form>
 
@@ -62,7 +69,16 @@ if ($_SERVER['REQUEST_METHOD']==='GET') {
 
     </div>
 
+
 </div>
+<div class="container">
+
+    <div class="row justify-content-around">
+            <a title="Borra tus inmuebles" href="funcionesUsuario.php">
+                <img src="img/volver.png" class="rounded mx-auto d-block"   href="usuarioBorraInmueble.php">
+    </div>
+</div>
+
 
 
 

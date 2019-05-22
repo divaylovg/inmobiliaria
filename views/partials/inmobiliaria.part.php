@@ -58,8 +58,6 @@
                 </div>
 
             </ul>
-            <form class="form-inline my-2 my-md-0">
-                <input class="form-control" type="text" placeholder="Buscar por identificador">
-            </form>
+
         </div>
     </nav>

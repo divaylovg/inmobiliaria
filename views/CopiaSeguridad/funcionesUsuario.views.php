@@ -269,6 +269,14 @@ $datosPropietario=$statement->fetchAll();
         }
     }
 
+
+    function venta(){
+        if (regNumero.test(arCampos[1].value)) {
+            arCampos[1].style.background="green";
+        }else{
+            arCampos[1].style.background="red";
+        }
+    }
 </SCRIPT>
 
 

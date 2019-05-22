@@ -27,7 +27,7 @@ if ($_SERVER['REQUEST_METHOD']==='POST') {
         //no hay objetos  redirigimos atras
 
 
-        header('Location:alquilar.php');
+        header('Location:comprar.php');
 
     }
 
