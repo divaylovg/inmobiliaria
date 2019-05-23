@@ -16,15 +16,15 @@ ob_start();
 
     <div class="form-group">
         <label for="formGroupExampleInput">Nombre</label>
-        <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Ejemplo: Daniel">
+        <input type="text" class="form-control" id="nombre"  onblur="comprobarLetrasNombre();" name="nombre" placeholder="Ejemplo: Daniel">
     </div>
     <div class="form-group">
         <label for="formGroupExampleInput2">Apellido</label>
-        <input type="text" class="form-control" id="apellido" name="apellido" placeholder="Ejemplo: Gerchev">
+        <input type="text" class="form-control" id="apellido" onblur="comprobarLetrasApellido();" name="apellido" placeholder="Ejemplo: Gerchev">
     </div>
     <div class="form-group">
         <label for="formGroupExampleInput2">Telefono</label>
-        <input type="text" class="form-control" id="telefono" name="telefono" placeholder="Ejemplo:653366987">
+        <input type="text" class="form-control" id="telefono" onblur="comprobarTelefono();" name="telefono" placeholder="Ejemplo:653366987">
     </div>
 
     <div class="form-group">
@@ -42,6 +42,37 @@ ob_start();
 
 
 
+
+<SCRIPT LANGUAGE="Javascript">
+    let arCampos=document.getElementsByTagName('input');
+
+    let regNumero= /^\d+$/;
+    let regLetras= /^\D+$/;
+
+    function comprobarLetrasNombre(){
+        if (regLetras.test(arCampos[1].value)) {
+            arCampos[1].style.background="green";
+        }else{
+            arCampos[1].style.background="red";
+        }
+    }
+
+    function comprobarLetrasApellido(){
+        if (regLetras.test(arCampos[2].value)) {
+            arCampos[2].style.background="green";
+        }else{
+            arCampos[2].style.background="red";
+        }
+    }
+    function comprobarTelefono(){
+        if (regNumero.test(arCampos[3].value)) {
+            arCampos[3].style.background="green";
+        }else{
+            arCampos[3].style.background="red";
+        }
+    }
+
+</SCRIPT>
 
 
 

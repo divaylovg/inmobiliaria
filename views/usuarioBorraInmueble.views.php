@@ -30,7 +30,7 @@ if ($_SERVER['REQUEST_METHOD']==='GET') {
 <div class="container">
 
 
-    <h1 class="text-center ">Estos son todos tus inmuebles, señor <?php echo $datosPropietario[0]["nombre"]; ?></h1>
+    <h1 class="text-center ">Estos son todos tus inmuebles, <?php echo $datosPropietario[0]["nombre"]; ?>. Si quieres borrar alguno solo tienes que seleccionarlo. Si deseas volver atras puedes hacerlo al final de la pagina.</h1>
     <div class="row text-center">
         <?php foreach($susPisos as $piso): ?>
             <div class="col-lg-3 col-md-6 mb-4">

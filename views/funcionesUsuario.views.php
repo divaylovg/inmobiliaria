@@ -38,44 +38,43 @@ $datosPropietario=$statement->fetchAll();
 
         <div class="col-lg-3 col-md-6 mb-4">
             <label for="validationTooltip01">Precio alquiler</label>
-            <input type="text" name="alquiler" onblur="alquiler();" placeholder="Entero" >
+            <input type="text" name="alquiler" onblur="comprobarNumerosAlquiler();" placeholder="Entero" >
         </div>
 
         <div class="col-lg-3 col-md-6 mb-4">
             <label for="validationTooltip01">Precio venta</label>
-            <input type="text"  name="venta" onblur="venta();" placeholder="Entero" >
+            <input type="text"  name="venta" onblur="comprobarNumerosVenta();" placeholder="Entero" >
         </div>
 
 
         <div class="col-lg-3 col-md-6 mb-4">
         <label for="validationTooltip01">Metros cuadrados</label>
-        <input type="text" class="form-control"  name="metros" placeholder="Metros"  required>
+        <input type="text" class="form-control" onblur="comprobarNumerosMetros();" name="metros" placeholder="Metros"  required>
     </div>
 
     <div class="col-lg-3 col-md-6 mb-4">
         <label for="validationTooltip01">Calle</label>
-        <input type="text" class="form-control" name="calle" placeholder="Nombre de la calle" required>
+        <input type="text" class="form-control" name="calle" onblur="comprobarLetrasCalle();"  placeholder="Nombre de la calle" required>
     </div>
-
 
 
     <div class="col-lg-3 col-md-6 mb-4">
         <label for="validationTooltip01">Numero</label>
-        <input type="text" class="form-control"  name="numero" placeholder="Entero"  required>
+        <input type="text" class="form-control"  name="numero" onblur="comprobarNumeroCalle();" placeholder="Entero"  required>
     </div>
     <div class="col-lg-3 col-md-6 mb-4">
         <label for="validationTooltip01">Puerta</label>
-        <input type="text" class="form-control"  name="puerta" placeholder="Entero"  required>
+        <input type="text" class="form-control"  name="puerta" onblur="comprobarNumeroPuerta();" placeholder="Entero"  required>
     </div>
     <div class="col-lg-3 col-md-6 mb-4">
         <label for="validationTooltip01">Ciudad</label>
-        <input type="text" class="form-control"  name="ciudad" placeholder="First name"  required>
+        <input type="text" class="form-control"  name="ciudad" onblur="comprobarLetrasCiudad();" placeholder="First name"  required>
     </div>
 
 
     <div class="col-lg-3 col-md-6 mb-4">
         <label for="validationTooltip01">Telefono</label>
-        <input type="text" class="form-control"  name="telefonoPropietario" placeholder="Entero"  required>
+        <input type="text" class="form-control"  name="telefonoPropietario" onblur="comprobarNumerosTelefono();" placeholder="Entero"  required>
     </div>
 
 
@@ -200,7 +199,7 @@ $datosPropietario=$statement->fetchAll();
         </div>
         <div class="col-md-4 mb-3">
             <label for="validationTooltip01">Codigo postal</label>
-            <input type="text" class="form-control" name="cp" placeholder="CP"  required>
+            <input type="text" class="form-control" onblur="comprobarNumerosCP();"  name="cp" placeholder="CP"  required>
         </div>
 
 
@@ -260,8 +259,9 @@ $datosPropietario=$statement->fetchAll();
     let arCampos=document.getElementsByTagName('input');
 
     let regNumero= /^\d+$/;
+    let regLetras= /^\D+$/;
 
-    function alquiler(){
+    function comprobarNumerosAlquiler(){
         if (regNumero.test(arCampos[0].value)) {
             arCampos[0].style.background="green";
         }else{
@@ -269,6 +269,71 @@ $datosPropietario=$statement->fetchAll();
         }
     }
 
+    function comprobarNumerosVenta(){
+        if (regNumero.test(arCampos[1].value)) {
+            arCampos[1].style.background="green";
+        }else{
+            arCampos[1].style.background="red";
+        }
+    }
+
+    function comprobarNumerosMetros(){
+        if (regNumero.test(arCampos[2].value)) {
+            arCampos[2].style.background="green";
+        }else{
+            arCampos[2].style.background="red";
+        }
+    }
+
+    function comprobarLetrasCalle(){
+        if (regLetras.test(arCampos[3].value)) {
+            arCampos[3].style.background="green";
+        }else{
+            arCampos[3].style.background="red";
+        }
+    }
+
+    function comprobarNumeroCalle(){
+        if (regNumero.test(arCampos[4].value)) {
+            arCampos[4].style.background="green";
+        }else{
+            arCampos[4].style.background="red";
+        }
+    }
+
+
+    function comprobarNumeroPuerta(){
+        if (regNumero.test(arCampos[5].value)) {
+            arCampos[5].style.background="green";
+        }else{
+            arCampos[5].style.background="red";
+        }
+    }
+
+    function comprobarLetrasCiudad(){
+        if (regLetras.test(arCampos[6].value)) {
+            arCampos[6].style.background="green";
+        }else{
+            arCampos[6].style.background="red";
+        }
+    }
+
+
+    function comprobarNumerosTelefono(){
+        if (regNumero.test(arCampos[7].value)) {
+            arCampos[7].style.background="green";
+        }else{
+            arCampos[7].style.background="red";
+        }
+    }
+
+    function comprobarNumerosCP(){
+        if (regNumero.test(arCampos[8].value)) {
+            arCampos[8].style.background="green";
+        }else{
+            arCampos[8].style.background="red";
+        }
+    }
 </SCRIPT>
 
 

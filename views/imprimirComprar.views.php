@@ -81,6 +81,14 @@ if ($_SERVER['REQUEST_METHOD']==='POST') {
 
 </div>
 
+<div class="container">
+
+    <div class="row justify-content-around">
+        <a title="Borra tus inmuebles" href="comprar.php">
+            <img src="img/volver.png" class="rounded mx-auto d-block"   href="comprar.php">
+    </div>
+</div>
+
 
 <!-- Footer -->
 <footer class="py-1 bg-dark ">
