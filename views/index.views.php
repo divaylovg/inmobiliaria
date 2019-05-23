@@ -26,7 +26,7 @@ if ($_SERVER['REQUEST_METHOD']==='GET') {
         <p>Que nos diferencia? En nuestra empresa no existe la palabra exclusividad!</p>
         <p>La mayoria de inmobiliarias les obliga a tener su inmueble durante meses por contrato pero nosotros creemos en nuestros agentes y como grandes profesionales que son les garantizamos la venta de su inmueble. Si quiere usted mismo puede dar de baja su piso! Sin ningun compromismo.</p>
         <p>Les ofrecemos asesoramiento totalmente gratuito. Tasacion de su propiedad. Compra venta y alquiler de toda clase de inmuebles.</p>
-        <a href="#" class="btn btn-primary btn-lg">Quiero saber mas!</a>
+        <a href="Contacto.php" class="btn btn-primary btn-lg">Quiero saber mas!</a>
     </header>
 
     <h1 class="text-center ">A continuacion nuestra mejor seleccion de inmuebles</h1>

@@ -30,8 +30,35 @@
 
 
 
+
+<form action="masInformacion.php" method="POST" enctype="multipart/form-data">
+    <h1>Podeis obtener informacion de los inmuebles, alquilar, vender, y borrar pisos.</h1>
+
+    <div class="form-row">
+
+
+        <div class="col">
+            <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Si deseas obtener mas datos para informar a los interesados sobre el inmueble busca por  <b>numero de referencia</b> </label>
+            <select class="custom-select my-1 mr-sm-2" name="id" id="id">
+
+                <?php foreach($todo as $t): ?>
+
+                    <option value=<?php echo $t['id'];?>><?php echo $t['id'];?></option>
+
+                <?php endforeach; ?>
+
+            </select>
+        </div>
+
+    </div>
+    <div>    <input type="submit" value="Enviar"></input>
+    </div>
+    </br>
+</form>
+
+
+
 <form action="funcionesEmpleado.php" method="POST" enctype="multipart/form-data">
-    <h1>Podeis alquilar vender y borrar pisos.</h1>
     <div class="form-row">
 
 
@@ -102,7 +129,6 @@
     </div>
     </br>
 </form>
-
 
 
 

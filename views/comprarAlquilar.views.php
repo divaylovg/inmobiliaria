@@ -14,14 +14,14 @@ if ($_SERVER['REQUEST_METHOD']==='GET') {
 
 ?>
 
-<div class="container">
+<div class="container m-5"">
 
-    <div class="row justify-content-around">
-        <div class="col-4">
+    <div class="row justify-content-around ">
+        <div class="col-4 >
             <a title="Alquilar" href="alquilar.php">
                 <img src="img/alquilar.jpg" style="width:100%" href="alquilar.php">
         </div>
-        <div class="col-4">
+        <div class="col-4 ">
             <a title="Vender" href="comprar.php">
             <img src="img/comprar.jpg" style="width:100%" href="comprar.php">
         </div>
