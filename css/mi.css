@@ -1,23 +1,9 @@
-body{
+
+* {
+    margin: 0; padding: 0;
+
 }
 
-.columna{
-	border:1px solid black;
-	text-align: center;
-	background: #fff;
-}
-
-.row{
-}
-
-.jummbotron{
-	background-color: orange;
-	color: green;
-}
-#total{
-	margin-left: 10%;
-	margin-right: 10%;
-}
 
 
 .zoom:hover {

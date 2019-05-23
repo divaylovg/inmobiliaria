@@ -12,14 +12,8 @@ if ($_SERVER['REQUEST_METHOD']==='GET') {
     $stmt->execute();
     $objetos=$stmt->fetchAll();
 
-    //obtenemos el total de objetos que tenemos en nuestra base de datos en la tabla inmueble. Vamos a imprimir los primeros 6 solo.
-  /*  echo $todos=sizeof($objetos);
-    for ($i=0;$i<8;$i++){
-        echo $objetos[$i]['id'];
-        echo $objetos[$i]['tipo'];
-        echo $objetos[$i]['alquiler'];
-        ?></br><?php
-    }*/
+    //obtenemos el total de objetos que tenemos en nuestra base de datos en la tabla inmueble
+
 }
 
 
