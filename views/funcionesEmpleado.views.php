@@ -31,109 +31,111 @@
 
 
 
-<form action="masInformacion.php" method="POST" enctype="multipart/form-data">
-    <h1>Podeis obtener informacion de los inmuebles, alquilar, vender, y borrar pisos.</h1>
-
-    <div class="form-row">
+<div class="container m-2">
 
 
-        <div class="col">
-            <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Si deseas obtener mas datos para informar a los interesados sobre el inmueble busca por  <b>numero de referencia</b> </label>
-            <select class="custom-select my-1 mr-sm-2" name="id" id="id">
+        <form action="masInformacion.php" method="POST" enctype="multipart/form-data">
+            <h1>Podeis obtener informacion de los inmuebles, alquilar, vender, y borrar pisos.</h1>
 
-                <?php foreach($todo as $t): ?>
+            <div class="form-row">
 
-                    <option value=<?php echo $t['id'];?>><?php echo $t['id'];?></option>
 
-                <?php endforeach; ?>
+                <div class="col">
+                    <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Si deseas obtener mas datos para informar a los interesados sobre el inmueble busca por  <b>numero de referencia</b> </label>
+                    <select class="custom-select my-1 mr-sm-2" name="id" id="id">
 
-            </select>
+                        <?php foreach($todo as $t): ?>
+
+                            <option value=<?php echo $t['id'];?>><?php echo $t['id'];?></option>
+
+                        <?php endforeach; ?>
+
+                    </select>
+                </div>
+
+            </div>
+            <div>    <input type="submit" value="Enviar"></input>
+            </div>
+            </br>
+        </form>
+
+
+
+        <form action="funcionesEmpleado.php" method="POST" enctype="multipart/form-data">
+            <div class="form-row">
+
+
+                <div class="col">
+                    <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Selecciona piso para alquilar por su <b>numero de referencia</b></label>
+                    <select class="custom-select my-1 mr-sm-2" name="id" id="id">
+
+                        <?php foreach($alquiler as $a): ?>
+
+                        <option value=<?php echo $a['id'];?>><?php echo $a['id'];?></option>
+
+                        <?php endforeach; ?>
+
+                    </select>
+                </div>
+
+            </div>
+            <div>    <input type="submit" value="Enviar"></input>
+            </div>
+        </br>
+        </form>
+
+
+        <form action="funcionesEmpleadoVender.php" method="POST" enctype="multipart/form-data">
+            <div class="form-row">
+
+
+                <div class="col">
+                    <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Selecciona piso para vender de la base de datos por su <b>numero de referencia</b></label>
+                    <select class="custom-select my-1 mr-sm-2" name="id" id="id">
+
+                        <?php foreach($venta as $v): ?>
+
+                            <option value=<?php echo $v['id'];?>><?php echo $v['id'];?></option>
+
+                        <?php endforeach; ?>
+
+                    </select>
+                </div>
+
+            </div>
+            <div>    <input type="submit" value="Enviar"></input>
+            </div>
+            </br>
+        </form>
+
+
+
+        <form action="funcionesEmpleadoVender.php" method="POST" enctype="multipart/form-data">
+            <div class="form-row">
+
+
+                <div class="col">
+                    <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Selecciona piso para borrar de la base de datos por su <b>numero de referencia</b></label>
+                    <select class="custom-select my-1 mr-sm-2" name="id" id="id">
+
+                        <?php foreach($todo as $t): ?>
+
+                            <option value=<?php echo $t['id'];?>><?php echo $t['id'];?></option>
+
+                        <?php endforeach; ?>
+
+                    </select>
+                </div>
+
+            </div>
+            <div>    <input type="submit" value="Enviar"></input>
+            </div>
+            </br>
+        </form>
+
+
+
         </div>
-
-    </div>
-    <div>    <input type="submit" value="Enviar"></input>
-    </div>
-    </br>
-</form>
-
-
-
-<form action="funcionesEmpleado.php" method="POST" enctype="multipart/form-data">
-    <div class="form-row">
-
-
-        <div class="col">
-            <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Selecciona piso para alquilar por su <b>numero de referencia</b></label>
-            <select class="custom-select my-1 mr-sm-2" name="id" id="id">
-
-                <?php foreach($alquiler as $a): ?>
-
-                <option value=<?php echo $a['id'];?>><?php echo $a['id'];?></option>
-
-                <?php endforeach; ?>
-
-            </select>
-        </div>
-
-    </div>
-    <div>    <input type="submit" value="Enviar"></input>
-    </div>
-</br>
-</form>
-
-
-<form action="funcionesEmpleadoVender.php" method="POST" enctype="multipart/form-data">
-    <div class="form-row">
-
-
-        <div class="col">
-            <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Selecciona piso para vender de la base de datos por su <b>numero de referencia</b></label>
-            <select class="custom-select my-1 mr-sm-2" name="id" id="id">
-
-                <?php foreach($venta as $v): ?>
-
-                    <option value=<?php echo $v['id'];?>><?php echo $v['id'];?></option>
-
-                <?php endforeach; ?>
-
-            </select>
-        </div>
-
-    </div>
-    <div>    <input type="submit" value="Enviar"></input>
-    </div>
-    </br>
-</form>
-
-
-
-<form action="funcionesEmpleadoVender.php" method="POST" enctype="multipart/form-data">
-    <div class="form-row">
-
-
-        <div class="col">
-            <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Selecciona piso para borrar de la base de datos por su <b>numero de referencia</b></label>
-            <select class="custom-select my-1 mr-sm-2" name="id" id="id">
-
-                <?php foreach($todo as $t): ?>
-
-                    <option value=<?php echo $t['id'];?>><?php echo $t['id'];?></option>
-
-                <?php endforeach; ?>
-
-            </select>
-        </div>
-
-    </div>
-    <div>    <input type="submit" value="Enviar"></input>
-    </div>
-    </br>
-</form>
-
-
-
-
-
 
 
 <!-- Footer -->

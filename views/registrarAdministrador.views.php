@@ -3,7 +3,8 @@ require __DIR__ . "/partials/inmobiliaria.part.php";
 
 ?>
 
-
+<div class="container m-5">
+    <div class="row text-left">
 
 <form action="registrarAdministrador.php" method="POST" enctype="multipart/form-data">
     <h1>Registro de administrador.</h1>
@@ -40,7 +41,8 @@ require __DIR__ . "/partials/inmobiliaria.part.php";
 
 
 
-
+    </div>
+</div>
 
 
 

@@ -12,7 +12,7 @@ $statement->execute();
 $datosPropietario=$statement->fetchAll();
 ?>
 
-
+<div class="container m-5">
 
 <form action="funcionesUsuario.php" method="POST" enctype="multipart/form-data">
     <h1>Aqui puedes añadir y borrar tus pisos, <?php echo $datosPropietario[0]["nombre"]; ?></h1>
@@ -252,6 +252,7 @@ $datosPropietario=$statement->fetchAll();
     </div>
 </div>
 
+    </div>
 
 
 <!-- Expresiones regulares javascript -->

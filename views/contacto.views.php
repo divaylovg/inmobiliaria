@@ -18,7 +18,7 @@ if ($_SERVER['REQUEST_METHOD']==='GET') {
 
 <div class="container">
 
-    <div class="row align-items-center my-5">
+    <div class="row align-items-center my-5 contraste zoom">
         <div class="col-lg-7">
             <img class="img-fluid rounded mb-4 mb-lg-0" src="img/contacto1.jpg" alt="">
         </div>
@@ -32,20 +32,20 @@ if ($_SERVER['REQUEST_METHOD']==='GET') {
     <table class="table table-striped">
         <h1>Donde nos encontramos.</h1>
         <tbody>
-        <tr>
+        <tr class="fila">
             <th scope="row">Ciudad:</th>
             <td>Valencia</td>
             <th>CP:</th>
             <td>46019 </td>
         </tr>
 
-        <tr>
+        <tr class="fila">
             <th scope="row">Calle:</th>
             <td>C/San Sebastian 5  </td>
             <th>Telefono:</th>
             <td>961 616 161</td>
         </tr>
-        <tr>
+        <tr class="fila">
             <th scope="row">Email:</th>
             <td>tucasa@ieslavereda.es  </td>
             <th>Responsable</th>
@@ -63,7 +63,7 @@ if ($_SERVER['REQUEST_METHOD']==='GET') {
 
     <div class="row">
         <div class="col-md-6 mb-5">
-            <div class="card h-100">
+            <div class="card h-100 arcoiris">
                 <div class="card-body">
                     <h2 class="card-title">Registrar usuario</h2>
                     <p class="card-text">Si se registra como usuario podrá gestionar todos sus inmuebles, para alquilar o vender online, de manera muy sencilla. Quiere dar de alta un inmueble En tan solo 30 segundos ya estará subido online y la gente puede recibir toda la información sobre el.</p>
@@ -73,8 +73,8 @@ if ($_SERVER['REQUEST_METHOD']==='GET') {
                 </div>
             </div>
         </div>
-        <div class="col-md-6 mb-5">
-            <div class="card h-100">
+        <div class="col-md-6 mb-5 ">
+            <div class="card h-100 arcoiris">
                 <div class="card-body">
                     <h2 class="card-title">Buscar inmuebles</h2>
                     <p class="card-text">Puede buscar inmuebles para comprar y alquilar por toda España. Tan fácil como filtrar por el dinero máximo que desea gastarse, la ciudad en la que desea vivir, el numero de habitaciones y el tipo de inmueble.</p>

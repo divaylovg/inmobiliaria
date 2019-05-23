@@ -13,7 +13,6 @@ $datosPropietario=$statement->fetchAll();
 ?>
 
 
-
 <form action="funcionesUsuario.php" method="POST" enctype="multipart/form-data">
     <h1>Aqui puedes añadir y borrar tus pisos, <?php echo $datosPropietario[0]["nombre"]; ?></h1>
     <p>Si alguien esta interesado en sus inmuebles nosotros nos pondremos en contacto con usted con los datos que nos ha facilitado, estos no seran publicos y siempre que alguien le llame sera un profesional de nuestra inmobiliaria:</p>

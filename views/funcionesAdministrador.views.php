@@ -5,42 +5,46 @@ require __DIR__ . "/partials/inmobiliaria.part.php";
 
 
 
-<form action="funcionesAdministrador.php" method="POST" enctype="multipart/form-data">
-    <h1>Aqui puedes registrar tus empleados</h1>
+<div class="container m-2">
+    <div class="row text-left">
 
-    <div class="form-group">
-        <label for="formGroupExampleInput">Usuario</label>
-        <input type="text" class="form-control" id="nombre" name="usuario" placeholder="Ejemplo: TzarDaniel">
+        <form action="funcionesAdministrador.php" method="POST" enctype="multipart/form-data">
+            <h1>Aqui puedes registrar tus empleados</h1>
+
+            <div class="form-group">
+                <label for="formGroupExampleInput">Usuario</label>
+                <input type="text" class="form-control" id="nombre" name="usuario" placeholder="Ejemplo: TzarDaniel">
+            </div>
+
+            <div class="form-group">
+                <label for="formGroupExampleInput">Nombre</label>
+                <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Ejemplo: Daniel">
+            </div>
+            <div class="form-group">
+                <label for="formGroupExampleInput2">Apellido</label>
+                <input type="text" class="form-control" id="apellido" name="apellido" placeholder="Ejemplo: Gerchev">
+            </div>
+            <div class="form-group">
+                <label for="formGroupExampleInput2">Telefono</label>
+                <input type="text" class="form-control" id="telefono" name="telefono" placeholder="Ejemplo:653366987">
+            </div>
+
+            <div class="form-group">
+                <label for="exampleInputEmail1">Email</label>
+                <input type="email" class="form-control" aria-describedby="emailHelp" name="correo" placeholder="Ejemplo: divaylov@ieslavereda.es">
+                <small class="form-text text-muted">Nunca vamos a dar su informacion a terceros.</small>
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1">Contraseña</label>
+                <input type="password" class="form-control" name="contra" placeholder="Introduce contraseña">
+            </div>
+
+            <input type="submit" value="Enviar">
+        </form>
+
+
     </div>
-
-    <div class="form-group">
-        <label for="formGroupExampleInput">Nombre</label>
-        <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Ejemplo: Daniel">
-    </div>
-    <div class="form-group">
-        <label for="formGroupExampleInput2">Apellido</label>
-        <input type="text" class="form-control" id="apellido" name="apellido" placeholder="Ejemplo: Gerchev">
-    </div>
-    <div class="form-group">
-        <label for="formGroupExampleInput2">Telefono</label>
-        <input type="text" class="form-control" id="telefono" name="telefono" placeholder="Ejemplo:653366987">
-    </div>
-
-    <div class="form-group">
-        <label for="exampleInputEmail1">Email</label>
-        <input type="email" class="form-control" aria-describedby="emailHelp" name="correo" placeholder="Ejemplo: divaylov@ieslavereda.es">
-        <small class="form-text text-muted">Nunca vamos a dar su informacion a terceros.</small>
-    </div>
-    <div class="form-group">
-        <label for="exampleInputPassword1">Contraseña</label>
-        <input type="password" class="form-control" name="contra" placeholder="Introduce contraseña">
-    </div>
-
-    <input type="submit" value="Enviar">
-</form>
-
-
-
+</div>
 
 
 

@@ -27,7 +27,7 @@ if ($_SERVER['REQUEST_METHOD']==='GET') {
 
 
 
-<div class="container">
+<div class="container m-2">
 
 
     <h1 class="text-center ">Estos son todos tus inmuebles, <?php echo $datosPropietario[0]["nombre"]; ?>. Si quieres borrar alguno solo tienes que seleccionarlo. Si deseas volver atras puedes hacerlo al final de la pagina.</h1>
@@ -71,7 +71,7 @@ if ($_SERVER['REQUEST_METHOD']==='GET') {
 
 
 </div>
-<div class="container">
+<div class="container m-2">
 
     <div class="row justify-content-around">
             <a title="Borra tus inmuebles" href="funcionesUsuario.php">

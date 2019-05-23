@@ -24,7 +24,7 @@ if ($_SERVER['REQUEST_METHOD']==='GET') {
 
 
 <div class="row text-center">
-     <div class="col-lg-3 col-md-6 mb-4">
+     <div class="col-lg-3 col-md-6 mb-4 zoom">
             <div class="card h-100">
                 <img class="card-img-top" src="img/euro3.jpg">
                 <div class="card-body">
@@ -37,7 +37,7 @@ if ($_SERVER['REQUEST_METHOD']==='GET') {
             </div>
         </div>
 
-    <div class="col-lg-3 col-md-6 mb-4">
+    <div class="col-lg-3 col-md-6 mb-4 zoom">
         <div class="card h-100">
             <img class="card-img-top " src="img/ciudad.jpg">
             <div class="card-body">
@@ -55,7 +55,7 @@ if ($_SERVER['REQUEST_METHOD']==='GET') {
     </div>
 
 
-    <div class="col-lg-3 col-md-6 mb-4">
+    <div class="col-lg-3 col-md-6 mb-4 zoom">
         <div class="card h-100">
             <img class="card-img-top " src="img/ciudad3.jpg">
             <div class="card-body">
@@ -72,7 +72,7 @@ if ($_SERVER['REQUEST_METHOD']==='GET') {
         </div>
     </div>
 
-    <div class="col-lg-3 col-md-6 mb-4">
+    <div class="col-lg-3 col-md-6 mb-4 zoom">
         <div class="card h-100">
             <img class="card-img-top " src="img/metros4.jpg">
             <div class="card-body">

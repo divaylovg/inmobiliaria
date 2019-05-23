@@ -7,6 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Inmobiliaria Tu Casa</title>
 
+    <!-- fonts  -->
+
+    <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Passion+One" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
     <!-- Bootstrap  -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
@@ -25,13 +31,14 @@
 
     <!-- Barra navegacion -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="#">Tu casa</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample05" aria-controls="navbarsExample05" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
 
         <div class="collapse navbar-collapse" id="navbarsExample05">
-            <ul class="navbar-nav mr-auto">
+            <ul class="navbar-nav ">
+                <a class="navbar-brand align-self-lg-end" href="index.php">Tu casa</a>
+
                 <li class="nav-item active">
                     <a class="nav-link" href="index.php">Inicio <span class="sr-only">(current)</span></a>
                 </li>
@@ -46,7 +53,7 @@
                     <a class="nav-link" href="contacto.php">Contacto</a>
                 </li>
 
-                <div class="dropdown">
+                <div class="dropdown float-right derecha">
                     <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Login
                     </button>
@@ -56,6 +63,7 @@
                         <a class="dropdown-item" href="loguearAdministrador.php">Entrar Administrador</a>
                     </div>
                 </div>
+
 
             </ul>
 

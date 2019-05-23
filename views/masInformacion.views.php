@@ -46,14 +46,14 @@ if ($_SERVER['REQUEST_METHOD']==='POST') {
     <div class="carousel-inner" role="listbox">
 
 
-        <div class="carousel-item active">
+        <div class="carousel-item active zoomMuyGrande">
             <img class="d-block w-100" src=<?php echo $arImg[0];?> >
             <div class="carousel-caption">
             </div>
         </div>
 
         <?php foreach($arImg as $img): ?>
-        <div class="carousel-item">
+        <div class="carousel-item zoomMuyGrande">
             <img class="d-block w-100" src=<?php echo $img;?> >
             <div class="carousel-caption">
             </div>
@@ -78,43 +78,43 @@ if ($_SERVER['REQUEST_METHOD']==='POST') {
 
 <table class="table table-striped">
     <tbody>
-    <tr>
+    <tr class="fila">
         <th scope="row">Referencia:</th>
         <td><?php echo $inmueble['id'];?></td>
         <th>Tipo:</th>
         <td><?php echo $inmueble['tipo'];?></td>
     </tr>
-    <tr>
+    <tr class="fila">
         <th scope="row">Alquiler:</th>
         <td><?php echo $inmueble['alquiler'];?></td>
         <th>Venta:</th>
         <td><?php echo $inmueble['venta'];?></td>
     </tr>
-    <tr>
+    <tr class="fila">
         <th scope="row">Habitaciones:</th>
         <td><?php echo $inmueble['habitaciones'];?></td>
         <th>Metros:</th>
         <td><?php echo $inmueble['metros'];?></td>
     </tr>
-    <tr>
+    <tr class="fila">
         <th scope="row">Ciudad:</th>
         <td><?php echo $inmueble['ciudad'];?></td>
         <th>Provincia:</th>
         <td><?php echo $inmueble['provincia'];?></td>
     </tr>
-    <tr>
+    <tr class="fila">
         <th scope="row">Calle:</th>
         <td><?php echo $inmueble['calle'];?></td>
         <th>Numero:</th>
         <td><?php echo $inmueble['numero'];?></td>
     </tr>
-    <tr>
+    <tr class="fila">
         <th scope="row">CP:</th>
         <td><?php echo $inmueble['cp'];?></td>
         <th>Ciudad:</th>
         <td><?php echo $inmueble['ciudad'];?></td>
     </tr>
-    <tr>
+    <tr class="fila">
         <th scope="row">Altura:</th>
         <td><?php echo $inmueble['piso'];?></td>
         <th>Ascensor:</th>
@@ -124,7 +124,7 @@ if ($_SERVER['REQUEST_METHOD']==='POST') {
             echo "No";
             }?></td>
     </tr>
-    <tr>
+    <tr class="fila">
         <th scope="row">Comentario:</th>
         <td><?php echo $inmueble['descripcion'];?></td>
     </tr>

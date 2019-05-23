@@ -37,14 +37,14 @@ if ($_SERVER['REQUEST_METHOD']==='POST') {
 
 
 
-<div class="container">
+<div class="container m-2">
 
-    <div class="row text-center">
+    <div class="row text-center ">
         <?php foreach($objetos as $objeto): ?>
             <div class="col-lg-3 col-md-6 mb-4">
 
                 <div class="card h-100">
-                    <img class="card-img-top" src=<?php echo $objeto['foto1'];?>>
+                    <img class="card-img-top circulito zoomGrande" src=<?php echo $objeto['foto1'];?>>
                     <div class="card-body">
                         <h4 class="card-title">Ciudad <?php echo $objeto['ciudad'];?> </h4>
                         <p class="card-text">
@@ -79,10 +79,10 @@ if ($_SERVER['REQUEST_METHOD']==='POST') {
 
 </div>
 
-<div class="container">
+<div class="container m-2">
 
-    <div class="row justify-content-around">
-        <a title="Borra tus inmuebles" href="alquilar.php">
+    <div class="row justify-content-around contraste">
+        <a title="Volver atras" href="alquilar.php">
             <img src="img/volver.png" class="rounded mx-auto d-block"   href="alquilar.php">
     </div>
 </div>

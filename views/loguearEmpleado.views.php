@@ -4,23 +4,26 @@ require __DIR__ . "/partials/inmobiliaria.part.php";
 ?>
 
 
+<div class="container m-2">
+        <div class="row text-left">
 
-<form action="loguearEmpleado.php" method="POST" enctype="multipart/form-data">
-    <h1>Seccion de empleados. Ingresa tus datos para vender y alquilar inmuebles.</h1>
+        <form action="loguearEmpleado.php" method="POST" enctype="multipart/form-data">
+            <h1>Seccion de empleados. Ingresa tus datos para vender y alquilar inmuebles.</h1>
 
-    <div class="form-group">
-        <label for="formGroupExampleInput">Usuario</label>
-        <input type="text" class="form-control" id="nombre" name="usuario" placeholder="Ejemplo: TzarDaniel">
+            <div class="form-group">
+                <label for="formGroupExampleInput">Usuario</label>
+                <input type="text" class="form-control" id="nombre" name="usuario" placeholder="Ejemplo: TzarDaniel">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1">Contraseña</label>
+                <input type="password" class="form-control" name="contra" placeholder="Introduce contraseña">
+            </div>
+
+            <input type="submit" value="Enviar"></input>
+        </form>
+
     </div>
-    <div class="form-group">
-        <label for="exampleInputPassword1">Contraseña</label>
-        <input type="password" class="form-control" name="contra" placeholder="Introduce contraseña">
-    </div>
-
-    <input type="submit" value="Enviar"></input>
-</form>
-
-
+</div>
 
 
 
