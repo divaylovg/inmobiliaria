@@ -1,4 +1,6 @@
 <?php
+ob_start();
+
 require __DIR__ . "/partials/inmobiliaria.part.php";
 
 ?>
@@ -11,29 +13,29 @@ require __DIR__ . "/partials/inmobiliaria.part.php";
 
     <div class="form-group">
         <label for="formGroupExampleInput">Usuario</label>
-        <input type="text" class="form-control" id="nombre" name="usuario" placeholder="Ejemplo: TzarDaniel">
+        <input type="text" class="form-control" id="nombre" name="usuario" placeholder="Ejemplo: TzarDaniel" required>
     </div>
 
     <div class="form-group">
         <label for="formGroupExampleInput">Nombre</label>
-        <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Ejemplo: Daniel">
+        <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Ejemplo: Daniel" required>
     </div>
     <div class="form-group">
         <label for="formGroupExampleInput2">Apellido</label>
-        <input type="text" class="form-control" id="apellido" name="apellido" placeholder="Ejemplo: Gerchev">
+        <input type="text" class="form-control" id="apellido" name="apellido" placeholder="Ejemplo: Gerchev" required>
     </div>
     <div class="form-group">
         <label for="formGroupExampleInput2">Telefono</label>
-        <input type="text" class="form-control" id="telefono" name="telefono" placeholder="Ejemplo:653366987">
+        <input type="text" class="form-control" id="telefono" name="telefono" placeholder="Ejemplo:653366987" required>
     </div>
 
     <div class="form-group">
         <label for="exampleInputEmail1">Email</label>
-        <input type="email" class="form-control" aria-describedby="emailHelp" name="correo" placeholder="Ejemplo: divaylov@ieslavereda.es">
+        <input type="email" class="form-control" aria-describedby="emailHelp" name="correo" placeholder="Ejemplo: divaylov@ieslavereda.es" required>
     </div>
     <div class="form-group">
         <label for="exampleInputPassword1">Contraseña</label>
-        <input type="password" class="form-control" name="contra" placeholder="Introduce contraseña">
+        <input type="password" class="form-control" name="contra" placeholder="Introduce contraseña" required>
     </div>
 
     <input type="submit" value="Enviar">

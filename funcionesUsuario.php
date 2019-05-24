@@ -145,13 +145,13 @@ if ($_SERVER['REQUEST_METHOD']==='POST') {
                                                                                     <script>
                                                                                         alert("El piso se ha registrado");
                                                                                     </script>
-                                                                               <?
+                                                                               <?php
                                                                             }else{
                                                                                 ?>
                                                                                 <script>
                                                                                     alert("Falta foto ");
                                                                                 </script>
-                                                                                <?
+                                                                                <?php
                                                                             }
 
                                                                         }else{
@@ -159,7 +159,7 @@ if ($_SERVER['REQUEST_METHOD']==='POST') {
                                                                             <script>
                                                                                 alert("Falta telefono ");
                                                                             </script>
-                                                                            <?
+                                                                            <?php
                                                                         }
 
                                                                 }else{
@@ -167,7 +167,7 @@ if ($_SERVER['REQUEST_METHOD']==='POST') {
                                                                     <script>
                                                                         alert("Falta ascensor");
                                                                     </script>
-                                                                    <?
+                                                                    <?php
                                                                 }
 
                                                             }else{
@@ -175,7 +175,7 @@ if ($_SERVER['REQUEST_METHOD']==='POST') {
                                                                 <script>
                                                                     alert("Falta descripcion");
                                                                 </script>
-                                                                <?
+                                                                <?php
                                                             }
 
                                                         }else{
@@ -183,7 +183,7 @@ if ($_SERVER['REQUEST_METHOD']==='POST') {
                                                             <script>
                                                                 alert("Falta piso");
                                                             </script>
-                                                            <?
+                                                            <?php
                                                         }
 
 
@@ -192,7 +192,7 @@ if ($_SERVER['REQUEST_METHOD']==='POST') {
                                                 <script>
                                                     alert("Falta puerta");
                                                 </script>
-                                                <?
+                                                <?php
                                             }
 
                                         }else{
@@ -200,7 +200,7 @@ if ($_SERVER['REQUEST_METHOD']==='POST') {
                                             <script>
                                                 alert("Falta numero ");
                                             </script>
-                                            <?
+                                            <?php
                                         }
 
                                     }else{
@@ -208,7 +208,7 @@ if ($_SERVER['REQUEST_METHOD']==='POST') {
                                         <script>
                                             alert("Falta cp");
                                         </script>
-                                        <?
+                                        <?php
                                     }
 
                                 }else{
@@ -216,7 +216,7 @@ if ($_SERVER['REQUEST_METHOD']==='POST') {
                                     <script>
                                         alert("Falta calle");
                                     </script>
-                                    <?
+                                    <?php
                                 }
 
                             }else{
@@ -224,7 +224,7 @@ if ($_SERVER['REQUEST_METHOD']==='POST') {
                                 <script>
                                     alert("Falta ciudad");
                                 </script>
-                                <?
+                                <?php
                             }
 
                         }else{
@@ -232,14 +232,14 @@ if ($_SERVER['REQUEST_METHOD']==='POST') {
                             <script>
                                 alert("Falta provincia");
                             </script>
-                            <?
+                            <?php
                         }
                     }else{
                         ?>
                         <script>
                             alert("Falta metros");
                         </script>
-                        <?
+                        <?php
                     }
 
                 }else{
@@ -247,7 +247,7 @@ if ($_SERVER['REQUEST_METHOD']==='POST') {
                         <script>
                         alert("Falta numero habitaciones");
                         </script>
-                    <?
+                    <?php
                 }
 
     }else{
@@ -255,7 +255,7 @@ if ($_SERVER['REQUEST_METHOD']==='POST') {
             <script>
             alert("Falta tipo");
             </script>
-        <?
+        <?php
     }
 }
 

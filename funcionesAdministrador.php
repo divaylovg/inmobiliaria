@@ -1,5 +1,6 @@
 <?php
 session_start();
+ob_start();
 
 require "views/funcionesAdministrador.views.php";
 require_once 'Connection.php';
@@ -37,25 +38,38 @@ if ($_SERVER['REQUEST_METHOD']==='POST') {
                             ?>  <script>
                                 alert("El usuario se ha registrado correctamente");
                             </script>
-                            <?
+                            <?php
 
                         }else{
-                            echo "Falta contraseña";
-                        }
+                            ?>  <script>
+                                alert("Falta contraseña");
+                            </script>
+                        <?php                        }
                     }else{
-                        echo "Falta correo";
-                    }
+                        ?>  <script>
+                            alert("Falta correo");
+                        </script>
+                    <?php                    }
                 }else{
-                    echo "Falta telefono";
-                }
+                    ?>  <script>
+                        alert("Falta telefono");
+                    </script>
+                <?php                }
             }else{
-                echo "Falta apellido.";
-            }
+                ?>  <script>
+                    alert("Falta apellido");
+                </script>
+            <?php            }
         }else{
-            echo "No ha introducido nombre";
-        }
+            ?>  <script>
+                alert("Falta nombre");
+            </script>
+        <?php        }
     }else{
-        echo "Falta usuario";
+        ?>  <script>
+            alert("falta usuario");
+        </script>
+    <?php
     }
 }
 

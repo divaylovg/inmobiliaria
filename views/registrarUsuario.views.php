@@ -12,30 +12,30 @@ ob_start();
 
     <div class="form-group">
         <label  class="text-left" for="formGroupExampleInput">Usuario</label>
-        <input type="text" class="form-control" id="nombre" name="usuario" placeholder="Ejemplo: TzarDaniel">
+        <input type="text" class="form-control" id="nombre" name="usuario" placeholder="Ejemplo: TzarDaniel" required>
     </div>
 
     <div class="form-group">
         <label class="text-left" for="formGroupExampleInput">Nombre</label>
-        <input type="text" class="form-control" id="nombre"  onblur="comprobarLetrasNombre();" name="nombre" placeholder="Ejemplo: Daniel">
+        <input type="text" class="form-control" id="nombre"  onblur="comprobarLetrasNombre();" name="nombre" placeholder="Ejemplo: Daniel" required>
     </div>
     <div class="form-group">
         <label class="text-left" for="formGroupExampleInput2">Apellido</label>
-        <input type="text" class="form-control" id="apellido" onblur="comprobarLetrasApellido();" name="apellido" placeholder="Ejemplo: Gerchev">
+        <input type="text" class="form-control" id="apellido" onblur="comprobarLetrasApellido();" name="apellido" placeholder="Ejemplo: Gerchev" required>
     </div>
     <div class="form-group">
         <label class="text-left" for="formGroupExampleInput2">Telefono</label>
-        <input type="text" class="form-control" id="telefono" onblur="comprobarTelefono();" name="telefono" placeholder="Ejemplo:653366987">
+        <input type="text" class="form-control" id="telefono" onblur="comprobarTelefono();" name="telefono" placeholder="Ejemplo:653366987" required>
     </div>
 
     <div class="form-group">
         <label  class="text-left" for="exampleInputEmail1">Email</label>
-        <input type="email" class="form-control" aria-describedby="emailHelp" name="correo" placeholder="Ejemplo: divaylov@ieslavereda.es">
+        <input type="email" class="form-control" aria-describedby="emailHelp" name="correo" placeholder="Ejemplo: divaylov@ieslavereda.es" required>
         <small class="form-text text-muted">Nunca vamos a dar su informacion a terceros.</small>
     </div>
     <div class="form-group">
         <label class="text-left" for="exampleInputPassword1">Contraseña</label>
-        <input type="password" class="form-control" name="contra" placeholder="Introduce contraseña">
+        <input type="password" class="form-control" name="contra" placeholder="Introduce contraseña" required>
     </div>
 
     <input type="submit" value="Enviar">

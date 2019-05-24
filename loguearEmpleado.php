@@ -25,7 +25,7 @@ if ($_SERVER['REQUEST_METHOD']==='POST') {
         ?><script>
             alert("No se ha encontrado usuario con los datos indicados");
         </script>
-        <?
+        <?php
 
     }else if (password_verify($contra, $persona["contra"])){
 
@@ -39,7 +39,7 @@ if ($_SERVER['REQUEST_METHOD']==='POST') {
         ?>  <script>
             alert("La contraseña no coincide, vuelva a intentarlo");
         </script>
-        <?
+        <?php
     }
 
 

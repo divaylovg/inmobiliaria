@@ -37,7 +37,7 @@ if ($_SERVER['REQUEST_METHOD']==='POST') {
                             ?>  <script>
                                 alert("El usuario se ha registrado correctamente");
                             </script>
-                            <?
+                            <?php
                             header('Location: loguearUsuario.php');
 
                         }else{
@@ -69,7 +69,8 @@ if ($_SERVER['REQUEST_METHOD']==='POST') {
         ?>  <script>
             alert("Falta usuario");
         </script>
-    <?php     }
+    <?php
+    }
 }
 
 

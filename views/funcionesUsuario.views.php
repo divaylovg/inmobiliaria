@@ -1,5 +1,6 @@
 <?php
 require __DIR__ . "/partials/inmobiliaria.part.php";
+ob_start();
 
 require_once 'Connection.php';
 $PDO=Connection::make();

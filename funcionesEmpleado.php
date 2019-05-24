@@ -20,7 +20,7 @@ if ($_SERVER['REQUEST_METHOD']==='POST') {
     ?>  <script>
         alert("El piso se ha alquilado");
     </script>
-    <?
+    <?php
 
 
 }

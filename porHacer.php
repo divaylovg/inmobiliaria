@@ -12,7 +12,7 @@ if ($_SERVER['REQUEST_METHOD']==='POST') {
     ?><script>
         alert("No se ha encontrado inmueble con el id indicado.");
     </script>
-    <?
+    <?php
 
 
     $sql = "SELECT * from inmueble where id=:id";
@@ -28,7 +28,7 @@ if ($_SERVER['REQUEST_METHOD']==='POST') {
         ?><script>
             alert("No se ha encontrado inmueble con el id indicado.");
         </script>
-        <?
+        <?php
 
     }else{
         echo $inmueble['id'];

@@ -20,7 +20,7 @@ if ($_SERVER['REQUEST_METHOD']==='POST') {
     ?>  <script>
         alert("Se ha completado la peticion.");
     </script>
-    <?
+    <?php
 
 
 }
