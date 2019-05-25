@@ -110,12 +110,7 @@ if ($_SERVER['REQUEST_METHOD']==='POST') {
         <th>Numero:</th>
         <td><?php echo $inmueble['numero'];?></td>
     </tr>
-    <tr class="fila">
-        <th scope="row">CP:</th>
-        <td><?php echo $inmueble['cp'];?></td>
-        <th>Ciudad:</th>
-        <td><?php echo $inmueble['ciudad'];?></td>
-    </tr>
+
     <tr class="fila">
         <th scope="row">Altura:</th>
         <td><?php echo $inmueble['piso'];?></td>
@@ -126,16 +121,25 @@ if ($_SERVER['REQUEST_METHOD']==='POST') {
             echo "No";
             }?></td>
     </tr>
+
     <tr class="fila">
-        <th scope="row">Comentario:</th>
-        <td><?php echo $inmueble['descripcion'];?></td>
+        <th scope="row">CP:</th>
+        <td><?php echo $inmueble['cp'];?></td>
+        <th scope="row"></th>
+        <td></td>
+
     </tr>
+
     </tbody>
 </table>
 
+<table class="table table-striped fila">
+    <tbody>
+<th scope="row">Comentario:</th>
+<td><?php echo $inmueble['descripcion'];?></td>
 
-
-
+    </tbody>
+</table>
 <!-- Footer -->
 <footer class="py-1 bg-dark ">
     <div class="container">
