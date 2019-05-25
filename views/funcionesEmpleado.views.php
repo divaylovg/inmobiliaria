@@ -36,7 +36,7 @@ ob_start();
 <div class="container m-2">
 
 
-        <form action="masInformacion.php" method="POST" enctype="multipart/form-data">
+        <form action="masInformacionEmpleado.php" method="POST" enctype="multipart/form-data">
             <h1>Podeis obtener informacion de los inmuebles, alquilar, vender, y borrar pisos.</h1>
 
             <div class="form-row">
