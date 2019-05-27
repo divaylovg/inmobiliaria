@@ -34,7 +34,7 @@ if ($_SERVER['REQUEST_METHOD']==='GET') {
     <h1 class="text-center ">A continuacion nuestra mejor seleccion de inmuebles</h1>
     <div class="row text-center">
         <?php foreach($objetos as $objeto): ?>
-            <div class="col-lg-3 col-md-6 mb-4">
+            <div class="col-lg-3 col-md-6">
 
                 <div class="card h-100">
                     <img class="card-img-top zoom" src=<?php echo $objeto['foto1'];?>>
