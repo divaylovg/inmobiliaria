@@ -26,7 +26,7 @@ if ($_SERVER['REQUEST_METHOD']==='GET') {
         </div>
         <div class="col-lg-5">
             <h1 class="font-weight-light">Inmobiliaria tu casa</h1>
-            <p>El <b>valor añadido</b> de nuestra empresa consiste en que no existe la palabra permanencia. Usted no se atara a través de un contrato de exclusividad con nosotros como hacen todas las demás inmobiliarias. Confiamos tanto en la <b>profesionalidad de nuestros agentes </b>que estamos seguros de que su inmueble se venderá/alquilara rápido y si no es así usted mismo puede dar de baja el inmueble que ha registrado en nuestra pagina web. </p>
+            <p>El <b>valor añadido</b> de nuestra empresa consiste en que no existe la palabra permanencia. Usted no se atara a través de un contrato de exclusividad con nosotros como hacen todas las demás inmobiliarias. Confiamos tanto en la <b>profesionalidad de nuestros agentes </b>que estamos seguros de que su inmueble se venderá/alquilará rápido y si no es así usted mismo puede dar de baja el inmueble que ha registrado en nuestra pagina web. </p>
         </div>
     </div>
 
@@ -68,7 +68,7 @@ if ($_SERVER['REQUEST_METHOD']==='GET') {
             <div class="card h-100 arcoiris">
                 <div class="card-body">
                     <h2 class="card-title">Registrar usuario</h2>
-                    <p class="card-text">Si se registra como usuario podrá gestionar todos sus inmuebles, para alquilar o vender online, de manera muy sencilla. Quiere dar de alta un inmueble En tan solo 30 segundos ya estará subido online y la gente puede recibir toda la información sobre el.</p>
+                    <p class="card-text">Si se registra como usuario podrá gestionar todos sus inmuebles, para alquilar o vender online, de manera muy sencilla. Quiere dar de alta un inmueble En tan sólo 30 segundos ya estará subido online y la gente puede recibir toda la información sobre el.</p>
                 </div>
                 <div class="card-footer">
                     <a href="registrarUsuario.php" class="btn btn-primary btn-sm">Registrarse</a>
@@ -79,7 +79,7 @@ if ($_SERVER['REQUEST_METHOD']==='GET') {
             <div class="card h-100 arcoiris">
                 <div class="card-body">
                     <h2 class="card-title">Buscar inmuebles</h2>
-                    <p class="card-text">Puede buscar inmuebles para comprar y alquilar por toda España. Tan fácil como filtrar por el dinero máximo que desea gastarse, la ciudad en la que desea vivir, el numero de habitaciones y el tipo de inmueble.</p>
+                    <p class="card-text">Puede buscar inmuebles para comprar y alquilar por toda España. Tan fácil como filtrar por el dinero máximo que desea gastarse, la ciudad en la que desea vivir, el número de habitaciones y el tipo de inmueble.</p>
                 </div>
                 <div class="card-footer">
                     <a href="comprarAlquilar.php" class="btn btn-primary btn-sm">Buscar</a>
@@ -109,7 +109,7 @@ if ($_SERVER['REQUEST_METHOD']==='GET') {
             </div>
 
             <div class="col-3">
-                <marquee class="text-primary " behavior="scroll" direction="left"> Informacion al 961 616 161 </marquee>
+                <marquee class="text-primary " behavior="scroll" direction="left"> Información al 961 616 161 </marquee>
             </div>
 
         </div>

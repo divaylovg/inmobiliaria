@@ -48,7 +48,7 @@ if ($_SERVER['REQUEST_METHOD']==='GET') {
             </div>
 
             <div class="col-3">
-                <marquee class="text-primary " behavior="scroll" direction="left"> Informacion al 961 616 161 </marquee>
+                <marquee class="text-primary " behavior="scroll" direction="left"> Información al 961 616 161 </marquee>
             </div>
 
         </div>

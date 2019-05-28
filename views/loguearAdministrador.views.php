@@ -28,13 +28,6 @@ require __DIR__ . "/partials/inmobiliaria.part.php";
 
 
 
-
-
-
-
-
-
-
 <!-- Footer -->
 <footer class="py-1 bg-dark ">
     <div class="container">

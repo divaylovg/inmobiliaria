@@ -5,9 +5,6 @@ ob_start();
 
 ?>
 
-
-
-
 <div class="container col 12 m-5">
     <div class="row text-left">
 
@@ -50,8 +47,6 @@ ob_start();
 </div>
 
 
-
-
 <SCRIPT LANGUAGE="Javascript">
     let arCampos=document.getElementsByTagName('input');
 
@@ -83,13 +78,6 @@ ob_start();
 
 </SCRIPT>
 
-
-
-
-
-
-
-
 <!-- Footer -->
 <footer class="py-1 bg-dark ">
     <div class="container">
@@ -113,7 +101,6 @@ ob_start();
         </div>
     </div>
 </footer>
-
 
 
 <!-- Bootstrap JavaScript -->

@@ -32,7 +32,7 @@ if ($_SERVER['REQUEST_METHOD']==='GET') {
                 <div class="card-body">
                     <h4 class="card-title">Dinero </h4>
                     <p class="card-text">
-                        Presupuesto maximo para comprar
+                        Presupuesto máximo para comprar
                     </p>
                         <input type="text" name="dinero" id="dinero" value="" required>
                 </div>
@@ -80,7 +80,7 @@ if ($_SERVER['REQUEST_METHOD']==='GET') {
             <div class="card-body">
                 <h4 class="card-title">Habitaciones </h4>
                 <p class="card-text">
-                    Numero minimo de habitaciones:
+                    Número mínimo de habitaciones:
 
                 </p>
                     <select class="custom-select my-1 mr-sm-2" name="habitaciones" id="habitaciones">
@@ -124,7 +124,7 @@ if ($_SERVER['REQUEST_METHOD']==='GET') {
             </div>
 
             <div class="col-3">
-                <marquee class="text-primary " behavior="scroll" direction="left"> Informacion al 961 616 161 </marquee>
+                <marquee class="text-primary " behavior="scroll" direction="left"> Información al 961 616 161 </marquee>
             </div>
 
         </div>
