@@ -27,9 +27,10 @@ if ($_SERVER['REQUEST_METHOD']==='POST') {
 
     if (!$objetos) {
         //no hay objetos  redirigimos atras
-
-
-        header('Location:comprar.php');
+        ?>  <script>
+            alert("No existe piso con las caracteristicas deseadas.");
+        </script>
+        <?php
 
     }
 
