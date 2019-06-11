@@ -263,75 +263,75 @@ $datosPropietario=$statement->fetchAll();
 
     function comprobarNumerosAlquiler(){
         if (regNumero.test(arCampos[0].value)) {
-            arCampos[0].style.background="green";
+            arCampos[0].style.background="lightgreen";
         }else{
-            arCampos[0].style.background="red";
+            arCampos[0].style.background="coral";
         }
     }
 
     function comprobarNumerosVenta(){
         if (regNumero.test(arCampos[1].value)) {
-            arCampos[1].style.background="green";
+            arCampos[1].style.background="lightgreen";
         }else{
-            arCampos[1].style.background="red";
+            arCampos[1].style.background="coral";
         }
     }
 
     function comprobarNumerosMetros(){
         if (regNumero.test(arCampos[2].value)) {
-            arCampos[2].style.background="green";
+            arCampos[2].style.background="lightgreen";
         }else{
-            arCampos[2].style.background="red";
+            arCampos[2].style.background="coral";
         }
     }
 
     function comprobarLetrasCalle(){
         if (regLetras.test(arCampos[3].value)) {
-            arCampos[3].style.background="green";
+            arCampos[3].style.background="lightgreen";
         }else{
-            arCampos[3].style.background="red";
+            arCampos[3].style.background="coral";
         }
     }
 
     function comprobarNumeroCalle(){
         if (regNumero.test(arCampos[4].value)) {
-            arCampos[4].style.background="green";
+            arCampos[4].style.background="lightgreen";
         }else{
-            arCampos[4].style.background="red";
+            arCampos[4].style.background="coral";
         }
     }
 
 
     function comprobarNumeroPuerta(){
         if (regNumero.test(arCampos[5].value)) {
-            arCampos[5].style.background="green";
+            arCampos[5].style.background="lightgreen";
         }else{
-            arCampos[5].style.background="red";
+            arCampos[5].style.background="coral";
         }
     }
 
     function comprobarLetrasCiudad(){
         if (regLetras.test(arCampos[6].value)) {
-            arCampos[6].style.background="green";
+            arCampos[6].style.background="lightgreen";
         }else{
-            arCampos[6].style.background="red";
+            arCampos[6].style.background="coral";
         }
     }
 
 
     function comprobarNumerosTelefono(){
         if (regNumero.test(arCampos[7].value)) {
-            arCampos[7].style.background="green";
+            arCampos[7].style.background="lightgreen";
         }else{
-            arCampos[7].style.background="red";
+            arCampos[7].style.background="coral";
         }
     }
 
     function comprobarNumerosCP(){
         if (regNumero.test(arCampos[8].value)) {
-            arCampos[8].style.background="green";
+            arCampos[8].style.background="lightgreen";
         }else{
-            arCampos[8].style.background="red";
+            arCampos[8].style.background="coral";
         }
     }
 </SCRIPT>

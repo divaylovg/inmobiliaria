@@ -54,24 +54,24 @@ ob_start();
 
     function comprobarLetrasNombre(){
         if (regLetras.test(arCampos[1].value)) {
-            arCampos[1].style.background="green";
+            arCampos[1].style.background="lightgreen";
         }else{
-            arCampos[1].style.background="red";
+            arCampos[1].style.background="coral";
         }
     }
 
     function comprobarLetrasApellido(){
         if (regLetras.test(arCampos[2].value)) {
-            arCampos[2].style.background="green";
+            arCampos[2].style.background="lightgreen";
         }else{
-            arCampos[2].style.background="red";
+            arCampos[2].style.background="coral";
         }
     }
     function comprobarTelefono(){
         if (regNumero.test(arCampos[3].value)) {
-            arCampos[3].style.background="green";
+            arCampos[3].style.background="lightgreen";
         }else{
-            arCampos[3].style.background="red";
+            arCampos[3].style.background="coral";
         }
     }
 
