@@ -11,6 +11,16 @@ $statement->setFetchMode(PDO::FETCH_CLASS|PDO::FETCH_PROPS_LATE,"propietario");
 $statement->bindParam(':idProp', $idPropietario);
 $statement->execute();
 $datosPropietario=$statement->fetchAll();
+
+
+
+$stmt=$PDO->prepare("SELECT * FROM ms_tipo_inmueble");
+$stmt->setFetchMode(PDO::FETCH_CLASS|PDO::FETCH_PROPS_LATE,"tipoinmueble");
+$stmt->execute();
+$inmuebles=$stmt->fetchAll();
+
+
+
 ?>
 
 
@@ -82,13 +92,10 @@ $datosPropietario=$statement->fetchAll();
         <div class="col-md-4 mb-3">
             <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Tipo inmueble</label>
             <select class="custom-select my-1 mr-sm-2" name="tipo" id="habitaciones">
-                <option selected value="chalet">Chalet</option>
-                <option value="finca">Finca</option>
-                <option value="piso">Piso</option>
-                <option value="terreno">Terreno</option>
-                <option value="garaje">Garaje</option>
-                <option value="trastero">Trastero</option>
-            </select>
+                    <?php foreach($inmuebles as $inmueble): ?>
+                        <option value=<?php echo $inmueble['tipo']?> name="tipo"><?php echo $inmueble['tipo'] ?></option>;
+                    <?php endforeach; ?>
+                </select>
         </div>
 
         <div class="col-md-4 mb-3">
