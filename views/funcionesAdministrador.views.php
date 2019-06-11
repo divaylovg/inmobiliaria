@@ -43,6 +43,17 @@ ob_start();
             <input type="submit" value="Enviar">
         </form>
 
+        <form action="addTipo.php" method="POST" enctype="multipart/form-data">
+            <h1>Registra nuevo tipo de propiedad</h1>
+
+            <div class="form-group">
+                <label class="text-left" for="formGroupExampleInput">Nombre</label>
+                <input type="text" class="form-control" id="tipo"  onblur="comprobarLetrasNombre();" name="tipo" placeholder="Ejemplo: Daniel" required>
+            </div>
+
+            <input type="submit" value="Enviar">
+        </form>
+
     </div>
 </div>
 
