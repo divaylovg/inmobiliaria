@@ -11,7 +11,7 @@ if ($_SERVER['REQUEST_METHOD']==='POST') {
     $id=$_POST['id'];
 
 
-    $sql="DELETE from inmueble where inmueble.id=:id";
+    $sql="UPDATE inmueble SET vendido=1 where id=:id";
     $statement=$PDO->prepare($sql);
     $statement->bindParam(':id', $id);
 

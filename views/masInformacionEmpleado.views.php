@@ -88,9 +88,18 @@ if ($_SERVER['REQUEST_METHOD']==='POST') {
     </tr>
     <tr class="fila">
         <th scope="row">Alquiler:</th>
-        <td><?php echo $inmueble['alquiler'];?></td>
+        <td><?php if ($inmueble['alquilado']=="1"){
+                echo "Alquilado por ".$inmueble['alquiler'];
+            }else{
+                echo $inmueble['alquiler'];}
+            ?></td>
+
         <th>Venta:</th>
-        <td><?php echo $inmueble['venta'];?></td>
+        <td><?php if ($inmueble['vendido']=="1"){
+                echo "Vendido por ".$inmueble['venta'];
+            }else{
+                echo $inmueble['venta'];}
+            ?></td>
     </tr>
     <tr class="fila">
         <th scope="row">Habitaciones:</th>

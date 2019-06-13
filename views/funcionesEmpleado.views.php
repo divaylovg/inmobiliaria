@@ -8,17 +8,17 @@ ob_start();
     //OBTENEMOS LOS PISOS PARA ALQUILAR Y PARA VENDER
     if ($_SERVER['REQUEST_METHOD']==='GET') {
 
-        $stmt=$PDO->prepare("SELECT * FROM inmueble where alquiler>0");
+        $stmt=$PDO->prepare("SELECT * FROM inmueble where alquiler>0 and alquilado=0 and vendido=0");
         $stmt->setFetchMode(PDO::FETCH_CLASS|PDO::FETCH_PROPS_LATE,"inmueble");
         $stmt->execute();
         $alquiler=$stmt->fetchAll();
 
-        $stmt=$PDO->prepare("SELECT * FROM inmueble where venta>0");
+        $stmt=$PDO->prepare("SELECT * FROM inmueble where venta>0 and vendido=0");
         $stmt->setFetchMode(PDO::FETCH_CLASS|PDO::FETCH_PROPS_LATE,"inmueble");
         $stmt->execute();
         $venta=$stmt->fetchAll();
 
-        $stmt=$PDO->prepare("SELECT * FROM inmueble");
+        $stmt=$PDO->prepare("SELECT * FROM inmueble where alquilado=0 or vendido=0");
         $stmt->setFetchMode(PDO::FETCH_CLASS|PDO::FETCH_PROPS_LATE,"inmueble");
         $stmt->execute();
         $todo=$stmt->fetchAll();

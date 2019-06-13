@@ -11,7 +11,7 @@ if ($_SERVER['REQUEST_METHOD']==='POST') {
     $id=$_POST['id'];
 
 
-    $sql="UPDATE inmueble SET alquiler=0 where id=:id";
+    $sql="UPDATE inmueble SET alquilado=1 where id=:id";
     $statement=$PDO->prepare($sql);
     $statement->bindParam(':id', $id);
 
