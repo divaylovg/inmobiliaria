@@ -15,7 +15,7 @@ if ($_SERVER['REQUEST_METHOD']==='POST') {
     $habitaciones=$_POST['habitaciones'];
 
 
-    $statement=$PDO->prepare("SELECT * FROM inmueble where alquiler<:dinero and alquiler>0  and tipo = :tipo and ciudad = :ciudad and habitaciones>= :habitaciones");
+    $statement=$PDO->prepare("SELECT * FROM inmueble where alquiler<:dinero and alquiler>0  and tipo = :tipo and ciudad = :ciudad and habitaciones>= :habitaciones and alquilado=0");
     $statement->setFetchMode(PDO::FETCH_CLASS|PDO::FETCH_PROPS_LATE,"inmueble");
     $statement->bindParam(':dinero', $dinero);
     $statement->bindParam(':tipo', $tipo);

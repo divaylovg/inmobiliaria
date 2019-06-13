@@ -48,7 +48,7 @@ ob_start();
 
             <div class="form-group">
                 <label class="text-left" for="formGroupExampleInput">Nombre</label>
-                <input type="text" class="form-control" id="tipo"  onblur="comprobarLetrasNombre();" name="tipo" placeholder="Ejemplo: Daniel" required>
+                <input type="text" class="form-control" id="tipo"  onblur="comprobarLetrasNombre();" name="tipo" placeholder="Ejemplo: piso" required>
             </div>
 
             <input type="submit" value="Enviar">

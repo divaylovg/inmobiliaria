@@ -90,13 +90,19 @@ if ($_SERVER['REQUEST_METHOD']==='POST') {
         <th scope="row">Alquiler:</th>
         <td><?php if ($inmueble['alquilado']=="1"){
             echo "Alquilado por ".$inmueble['alquiler'];
+            }else if ($inmueble['alquiler']=="0"){
+                echo "No se alquila";
             }else{
-            echo $inmueble['alquiler'];}
-            ?></td>
+            echo $inmueble['alquiler'];
+            }
+            ?>
+            </td>
 
         <th>Venta:</th>
         <td><?php if ($inmueble['vendido']=="1"){
                 echo "Vendido por ".$inmueble['venta'];
+            }else if ($inmueble['venta']=="0"){
+                echo "No esta en venta";
             }else{
                 echo $inmueble['venta'];}
             ?></td>
