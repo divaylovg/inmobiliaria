@@ -10,7 +10,7 @@ $idPropietario=$_SESSION['id'];
 
 if ($_SERVER['REQUEST_METHOD']==='POST') {
 
-    $sql="INSERT INTO inmueble (tipo , alquiler, venta, habitaciones, metros,provincia, ciudad, calle, cp, numero, puerta, piso, idPropietario,telefonoPropietario,descripcion,ascensor,foto1,foto2,foto3,foto4,foto5) VALUES (:tipo , :alquiler, :venta, :habitaciones, :metros, :provincia, :ciudad, :calle, :cp, :numero, :puerta, :piso, :idPropietario, :telefonoPropietario, :descripcion, :ascensor, :foto1,:foto2, :foto3, :foto4,:foto5)";
+    $sql="INSERT INTO inmueble (tipo , alquiler, venta, habitaciones, metros,provincia, ciudad, calle, cp, numero, puerta, piso, idPropietario,telefonoPropietario,descripcion,ascensor,foto1) VALUES (:tipo , :alquiler, :venta, :habitaciones, :metros, :provincia, :ciudad, :calle, :cp, :numero, :puerta, :piso, :idPropietario, :telefonoPropietario, :descripcion, :ascensor, :foto1)";
     $tipo=$_POST['tipo'];
     $habitaciones=$_POST['habitaciones'];
     $metros=$_POST['metros'];
@@ -24,7 +24,6 @@ if ($_SERVER['REQUEST_METHOD']==='POST') {
     $telefonoPropietario=$_POST['telefonoPropietario'];
     $descripcion=$_POST['descripcion'];
     $ascensor=$_POST['ascensor'];
-
 
     if(!isset($alquiler)){
         $alquiler=$_POST['alquiler'];
@@ -51,15 +50,9 @@ if ($_SERVER['REQUEST_METHOD']==='POST') {
                                                                         if ($telefonoPropietario!=""){
 
                                                                             $name1=$_FILES['foto1']['name'];
-                                                                            $name2=$_FILES['foto2']['name'];
-                                                                            $name3=$_FILES['foto3']['name'];
-                                                                            $name4=$_FILES['foto4']['name'];
-                                                                            $name5=$_FILES['foto5']['name'];
+
                                                                             $foto1="imagenes/".$name1;
-                                                                            $foto2="imagenes/".$name2;
-                                                                            $foto3="imagenes/".$name3;
-                                                                            $foto4="imagenes/".$name4;
-                                                                            $foto5="imagenes/".$name5;
+
                                                                             $idUnico = time();
 
                                                                             if (is_file($foto1) === true) {
@@ -92,55 +85,36 @@ if ($_SERVER['REQUEST_METHOD']==='POST') {
                                                                                     $statement->bindParam(':alquiler', $alquiler);
                                                                                 }
 
-
-
-                                                                                if (is_file($foto2) === true) {
-                                                                                    $name2 = $idUnico . '_f2_' . $name2;
-                                                                                    if (move_uploaded_file($_FILES['foto2']['tmp_name'], $foto2)) {
-                                                                                        $statement->bindParam(':foto2', $foto2);
-                                                                                    }
-                                                                                }else{
-                                                                                    $foto2=null;
-                                                                                    $statement->bindParam(':foto2', $foto2);
-
-                                                                                }
-
-                                                                                if (is_file($foto3) === true) {
-                                                                                    $name3 = $idUnico . '_f3_' . $name3;
-                                                                                    if (move_uploaded_file($_FILES['foto3']['tmp_name'], $foto3)) {
-                                                                                        $statement->bindParam(':foto3', $foto3);
-                                                                                    }
-                                                                                }else{
-                                                                                    $foto3=null;
-                                                                                    $statement->bindParam(':foto3', $foto3);
-
-                                                                                }
-
-                                                                                if (is_file($foto4) === true) {
-                                                                                    $name4 = $idUnico . '_f4_' . $name4;
-                                                                                    if (move_uploaded_file($_FILES['foto4']['tmp_name'], $foto4)) {
-                                                                                        $statement->bindParam(':foto4', $foto4);
-                                                                                    }
-                                                                                }else{
-                                                                                    $foto4=null;
-                                                                                    $statement->bindParam(':foto4', $foto4);
-
-                                                                                }
-
-                                                                                if (is_file($foto5) === true) {
-                                                                                    $name5 = $idUnico . '_f5_' . $name5;
-                                                                                    if (move_uploaded_file($_FILES['foto5']['tmp_name'], $foto5)) {
-                                                                                        $statement->bindParam(':foto5', $foto5);
-                                                                                    }
-                                                                                }else{
-                                                                                    $foto5=null;
-                                                                                    $statement->bindParam(':foto5', $foto5);
-
-                                                                                }
-
-
                                                                                 // ver la insercion echo $statement->queryString;
                                                                                 $statement->execute();
+
+
+
+                                                                                $sqlid = "SELECT id FROM inmueble ORDER BY id DESC LIMIT 1";
+                                                                                $statement=$PDO->prepare($sqlid);
+                                                                                $statement->execute();
+                                                                                $ultimoId = $statement->fetch(PDO::FETCH_ASSOC);
+
+                                                                                if (isset($_FILES["fotos"])) {
+
+                                                                                    $namex =$_FILES['fotos']['name'];
+                                                                                    for($i=0;$i<sizeof($namex);$i++) {
+                                                                                        $fotox="imagenes/".$namex[$i];
+                                                                                        echo $fotox;
+
+                                                                                        if (move_uploaded_file($_FILES['fotos']['tmp_name'][$i], $fotox)) {
+                                                                                            $sqlfoto="INSERT INTO fotos (foto, id_inmueble) VALUES (:foto,:id_inmueble)";
+                                                                                            $statement=$PDO->prepare($sqlfoto);
+                                                                                            $statement->bindParam(':id_inmueble', $ultimoId['id']);
+                                                                                            $statement->bindParam(':foto', $fotox);
+                                                                                            $statement->execute();
+
+                                                                                        }
+
+                                                                                    }
+
+                                                                                    }
+                                                                                }
                                                                                 ?>
                                                                                     <script>
                                                                                         alert("El piso se ha registrado");
@@ -250,13 +224,7 @@ if ($_SERVER['REQUEST_METHOD']==='POST') {
                     <?php
                 }
 
-    }else{
-        ?>
-            <script>
-            alert("Falta tipo");
-            </script>
-        <?php
-    }
+
 }
 
 

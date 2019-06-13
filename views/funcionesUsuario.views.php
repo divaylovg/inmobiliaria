@@ -48,43 +48,43 @@ $inmuebles=$stmt->fetchAll();
 
         <div class="col-lg-3 col-md-6 mb-4">
             <label for="validationTooltip01">Precio alquiler</label>
-            <input type="text" name="alquiler" onblur="comprobarNumerosAlquiler();" placeholder="Entero" >
+            <input type="text" name="alquiler" onblur="comprobarNumerosAlquiler();" placeholder="Entero" value="333">
         </div>
 
         <div class="col-lg-3 col-md-6 mb-4">
             <label for="validationTooltip01">Precio venta</label>
-            <input type="text"  name="venta" onblur="comprobarNumerosVenta();" placeholder="Entero" >
+            <input type="text"  name="venta" onblur="comprobarNumerosVenta();" placeholder="Entero" value="55555555" >
         </div>
 
 
         <div class="col-lg-3 col-md-6 mb-4">
         <label for="validationTooltip01">Metros cuadrados</label>
-        <input type="text" class="form-control" onblur="comprobarNumerosMetros();" name="metros" placeholder="Metros"  required>
+        <input type="text" class="form-control" onblur="comprobarNumerosMetros();" name="metros" placeholder="Metros"  value="100" required>
     </div>
 
     <div class="col-lg-3 col-md-6 mb-4">
         <label for="validationTooltip01">Calle</label>
-        <input type="text" class="form-control" name="calle" onblur="comprobarLetrasCalle();"  placeholder="Nombre de la calle" required>
+        <input type="text" class="form-control" name="calle" onblur="comprobarLetrasCalle();"  placeholder="Nombre de la calle" value="Calle Bosco" required>
     </div>
 
 
     <div class="col-lg-3 col-md-6 mb-4">
         <label for="validationTooltip01">Numero</label>
-        <input type="text" class="form-control"  name="numero" onblur="comprobarNumeroCalle();" placeholder="Entero"  required>
+        <input type="text" class="form-control"  name="numero" onblur="comprobarNumeroCalle();" placeholder="Entero" value="333" required>
     </div>
     <div class="col-lg-3 col-md-6 mb-4">
         <label for="validationTooltip01">Puerta</label>
-        <input type="text" class="form-control"  name="puerta" onblur="comprobarNumeroPuerta();" placeholder="Entero"  required>
+        <input type="text" class="form-control"  name="puerta" onblur="comprobarNumeroPuerta();" placeholder="Entero" value="333" required>
     </div>
     <div class="col-lg-3 col-md-6 mb-4">
         <label for="validationTooltip01">Ciudad</label>
-        <input type="text" class="form-control"  name="ciudad" onblur="comprobarLetrasCiudad();" placeholder="First name"  required>
+        <input type="text" class="form-control"  name="ciudad" onblur="comprobarLetrasCiudad();" placeholder="First name"  value="Valencia"required>
     </div>
 
 
     <div class="col-lg-3 col-md-6 mb-4">
         <label for="validationTooltip01">Telefono</label>
-        <input type="text" class="form-control"  name="telefonoPropietario" onblur="comprobarNumerosTelefono();" placeholder="Entero"  required>
+        <input type="text" class="form-control"  name="telefonoPropietario" onblur="comprobarNumerosTelefono();" placeholder="Entero"  value="66666666" required>
     </div>
 
 
@@ -206,7 +206,7 @@ $inmuebles=$stmt->fetchAll();
         </div>
         <div class="col-md-4 mb-3">
             <label for="validationTooltip01">Codigo postal</label>
-            <input type="text" class="form-control" onblur="comprobarNumerosCP();"  name="cp" placeholder="CP"  required>
+            <input type="text" class="form-control" onblur="comprobarNumerosCP();"  name="cp" placeholder="CP" value="44444" required>
         </div>
 
 
@@ -215,25 +215,25 @@ $inmuebles=$stmt->fetchAll();
             <input type="file" name="foto1" value="">
         </div>
 
-        <div class="col-md-4 mb-3">
-            <label for="num">Foto 2 </label>
-            <input type="file" name="foto2" value="">
+
+        <div class="col-md-4 mb-3 ">
+
+            <div class="cuadradito" onclick="masFotos()">Crear mas fotos</div>
         </div>
 
-        <div class="col-md-4 mb-3">
-            <label for="num">Foto 3 </label>
-            <input type="file" name="foto3" value="">
-        </div>
+        <div id="mas"></div>
 
-        <div class="col-md-4 mb-3">
-            <label for="num">Foto 4 </label>
-            <input type="file" name="foto4" value="">
-        </div>
 
-        <div class="col-md-4 mb-3">
-            <label for="num">Foto 5 </label>
-            <input type="file" name="foto5" value="">
-        </div>
+        <script>
+            function masFotos() {
+                var x=document.createElement("input");
+                x.setAttribute("name","fotos[]");
+                x.setAttribute("type","file");
+                document.getElementById("mas").appendChild(x);
+            }
+        </script>
+
+
 
 
         <div class="form-group col-12">
@@ -246,6 +246,8 @@ $inmuebles=$stmt->fetchAll();
     </div>
 </br>
 </form>
+
+
 
 
 <div class="container">
