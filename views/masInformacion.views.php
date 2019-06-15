@@ -12,13 +12,19 @@ if ($_SERVER['REQUEST_METHOD']==='POST') {
 
     $sql = "SELECT * from inmueble where id=:id";
     $id=$_POST['id'];
-
     $statement=$PDO->prepare($sql);
     $statement->bindParam(':id', $id);
     $statement->execute();
     $inmueble = $statement->fetch(PDO::FETCH_ASSOC);
 
 
+    $sql = "SELECT  *  from fotos where id_inmueble=:id";
+    $statement=$PDO->prepare($sql);
+    $statement->bindParam(':id', $id);
+    $statement->execute();
+    $fotos = $statement->fetchAll(PDO::FETCH_NUM);
+
+    //print_r(sizeof($fotos));
 
     if (!$inmueble){
         ?><script>
@@ -29,13 +35,23 @@ if ($_SERVER['REQUEST_METHOD']==='POST') {
     }else{
 
 
-        $arImg=[];
+        $imgPrincipal=[];
         for ($i=1;$i<6;$i++){
             $nombre="foto".$i;
             if (null!=$inmueble[$nombre]){
-                array_push($arImg,$inmueble[$nombre]);
+                array_push($imgPrincipal,$inmueble[$nombre]);
             }
         }
+        //Array ( [0] => Array ( [0] => 9 [1] => imagenes/2.jpg [2] => 56 ) [1] => Array ( [0] => 10 [1] => imagenes/4.jpg [2] => 56 ) )
+        $arImg=[];
+
+        for ($y=0;$y<sizeof($fotos);$y++){
+            array_push($arImg,$fotos[$y][1]);
+        }
+        print_r($arImg);
+
+
+
     }
 }
 
@@ -49,7 +65,7 @@ if ($_SERVER['REQUEST_METHOD']==='POST') {
 
 
         <div class="carousel-item active zoomMuyGrande">
-            <img class="d-block w-100" src=<?php echo $arImg[0];?> >
+            <img class="d-block w-100" src=<?php echo $imgPrincipal[0];?> >
             <div class="carousel-caption">
             </div>
         </div>
