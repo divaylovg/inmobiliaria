@@ -100,7 +100,7 @@ if ($_SERVER['REQUEST_METHOD']==='POST') {
                                                                                     $namex =$_FILES['fotos']['name'];
                                                                                     for($i=0;$i<sizeof($namex);$i++) {
                                                                                         $fotox="imagenes/".$namex[$i];
-                                                                                        echo $fotox;
+                                                                                        //echo $fotox;
 
                                                                                         if (move_uploaded_file($_FILES['fotos']['tmp_name'][$i], $fotox)) {
                                                                                             $sqlfoto="INSERT INTO fotos (foto, id_inmueble) VALUES (:foto,:id_inmueble)";
