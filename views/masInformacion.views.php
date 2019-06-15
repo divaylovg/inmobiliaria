@@ -48,7 +48,7 @@ if ($_SERVER['REQUEST_METHOD']==='POST') {
         for ($y=0;$y<sizeof($fotos);$y++){
             array_push($arImg,$fotos[$y][1]);
         }
-        print_r($arImg);
+        //print_r($arImg);
 
 
 
